@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function Home() {
-    const [objects, setObjects] = useState([]);
+    const [counts, setCounts] = useState([]);
     const [photo, setPhoto] = useState(null); 
     
     useEffect(() => {
@@ -10,7 +10,7 @@ function Home() {
             .get(`https://api.le-systeme-solaire.net/rest/knowncount`)
             .then((response) => {
                 console.log(response.data.knowncount);
-                setObjects(response.data.knowncount);
+                setCounts(response.data.knowncount);
             })
             .catch((error) => {
                 console.log(error);
@@ -29,11 +29,11 @@ function Home() {
             });
     }, []);
 
-    const objectList = objects.map(object => {
+    const countList = counts.map(count => {
         return (
-            <div key={object.id}>
-                <p>{object.id}</p>
-                <p>{object.knownCount}</p>
+            <div key={count.id}>
+                <p>{count.id}</p>
+                <p>{count.knownCount}</p>
                 <hr />
             </div>
         );
@@ -49,7 +49,7 @@ function Home() {
                 />
             )}
             <h2>Known Count</h2>
-            { objectList }
+            { countList }
         </>
     );
     
