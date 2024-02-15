@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Index() {
     const [bodies, setBodies] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         axios
@@ -18,7 +19,11 @@ function Index() {
             });
     }, []);
 
-    const bodyList = bodies.map(body => {
+    const filteredBodies = bodies.filter((body) =>
+    body.englishName.toLowerCase().startsWith(searchTerm.toLowerCase())
+);
+
+    const bodyList = filteredBodies.map(body => {
         return (
             <div key={body.id}>
                 <Link to={`/celestial_bodies/${body.id}`}>{body.name}</Link>
@@ -30,6 +35,14 @@ function Index() {
     return (
         <>
             <h1>Celestial Bodies</h1>
+            <form>
+                <input 
+                    type="text"
+                    placeholder="Search for a celestial body"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+            </form> 
             { bodyList }
         </>
     );
