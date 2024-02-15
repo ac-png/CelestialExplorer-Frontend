@@ -26,7 +26,7 @@ function Index() {
     const bodyList = filteredBodies.map(body => {
         return (
             <div key={body.id}>
-                <Link to={`/celestial_bodies/${body.id}`}>{body.name}</Link>
+                <Link to={`/celestial_bodies/${body.id}`}>{body.englishName}</Link>
                 <hr />
             </div>
         );
