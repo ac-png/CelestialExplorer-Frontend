@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from './pages/Home';
-import CelestialBodyIndex from './pages/celestialObjects/Index';
-import CelestialBodyShow from './pages/celestialObjects/Show';
+import CelestialBodyIndex from './pages/celestialBodies/Index';
+import CelestialBodyShow from './pages/celestialBodies/Show';
 import PageNotFound from "./pages/PageNotFound";
 import Navbar from "./components/Navbar";
 
