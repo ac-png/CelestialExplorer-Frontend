@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function Home() {
-const [photo, setPhoto] = useState(null);
 const [counts, setCounts] = useState([]);
 
 useEffect(() => {
