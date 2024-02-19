@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchKnownCount } from './API';
 
 function Home() {
     const [counts, setCounts] = useState([]);
 
     useEffect(() => {
-        axios
-        .get('https://api.le-systeme-solaire.net/rest/knowncount')
-        .then((response) => {
-            // console.log(response.data.knowncount);
-            setCounts(response.data.knowncount);
+        fetchKnownCount()
+        .then((knownCount) => {
+            setCounts(knownCount);
         })
         .catch((error) => {
-            console.log(error);
+            console.error('Error setting known count:', error);
         });
     }, []);
 

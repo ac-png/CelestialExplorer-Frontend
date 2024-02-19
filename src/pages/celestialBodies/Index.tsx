@@ -1,22 +1,19 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchBodies } from "../API";
 
 function Index() {
     const [bodies, setBodies] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        axios
-            .get(`https://api.le-systeme-solaire.net/rest/bodies`)
-            .then((response) => {
-                // console.log(response.data.bodies);
-                const sortedBodies = [...response.data.bodies].sort((a, b) => a.name.localeCompare(b.name));
-                setBodies(sortedBodies);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        fetchBodies()
+        .then((bodies) => {
+            setBodies(bodies);
+        })
+        .catch((error) => {
+            console.error('Error setting known count:', error);
+        });
     }, []);
 
     const filteredBodies = bodies.filter((body) =>
