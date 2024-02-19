@@ -54,17 +54,17 @@ function Signup() {
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="name">
-                Name
+                <b>Name</b><br />
                 <input onChange={handleForm} type="text" name="name" value={form.name} />
-            </label><br />
+            </label><br /><br />
             <label htmlFor="email">
-                Email
+                <b>Email</b><br />
                 <input onChange={handleForm} type="text" name="email" value={form.email} />
-            </label><br />
+            </label><br /><br />
             <label htmlFor="password">
-                Password
+                <b>Password</b><br />
                 <input onChange={handleForm} type="password" name="password" value={form.password} />
-            </label><br />
+            </label><br /><br />
             <button type="submit" className="button expanded">
                 Sign Up
             </button>

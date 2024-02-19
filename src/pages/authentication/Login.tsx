@@ -51,9 +51,10 @@ function Login() {
 
     return (
         <>
-            Email: <input onChange={handleForm} type="text" name="email" value={form.email}  /> <br />
-            Password: <input onChange={handleForm} type="password" name="password" value={form.password} />
-
+            <b>Email</b><br />
+            <input onChange={handleForm} type="text" name="email" value={form.email}  /><br /><br />
+            <b>Password</b><br />
+            <input onChange={handleForm} type="password" name="password" value={form.password} /><br /><br />
             <button onClick={handleSubmit}>Submit</button>
             <p style={errorStyle}>{errorMessage}</p>
         </>

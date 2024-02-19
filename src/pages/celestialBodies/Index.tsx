@@ -39,7 +39,7 @@ function Index() {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-            </form> 
+            </form><br />
             { bodyList }
         </>
     );
