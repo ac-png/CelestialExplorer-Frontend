@@ -14,7 +14,7 @@ function User () {
                 }
             })
             .then(response => {
-                console.log(response.data.user)
+                // console.log(response.data.user)
                 setUser(response.data.user);
             })
             .catch(err => {

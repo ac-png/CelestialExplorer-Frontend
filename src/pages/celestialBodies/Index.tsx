@@ -10,7 +10,7 @@ function Index() {
         axios
             .get(`https://api.le-systeme-solaire.net/rest/bodies`)
             .then((response) => {
-                console.log(response.data.bodies);
+                // console.log(response.data.bodies);
                 const sortedBodies = [...response.data.bodies].sort((a, b) => a.name.localeCompare(b.name));
                 setBodies(sortedBodies);
             })

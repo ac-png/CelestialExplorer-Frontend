@@ -10,7 +10,7 @@ function Show() {
         axios
             .get(`https://api.le-systeme-solaire.net/rest/bodies/${id}`)
             .then((response) => {
-                console.log(response.data);
+                // console.log(response.data);
                 setBody(response.data);
             })
             .catch((error) => {

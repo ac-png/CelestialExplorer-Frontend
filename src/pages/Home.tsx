@@ -9,7 +9,7 @@ useEffect(() => {
     axios
     .get('https://api.le-systeme-solaire.net/rest/knowncount')
     .then((response) => {
-        console.log(response.data.knowncount);
+        // console.log(response.data.knowncount);
         setCounts(response.data.knowncount);
     })
     .catch((error) => {
@@ -21,7 +21,7 @@ useEffect(() => {
     axios
     .get('https://api.nasa.gov/planetary/apod?api_key=niz11pa6Xj1H0HrJijvK3jGR72Lf9XGmXsa9bdsS')
     .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setPhoto(response.data);
     })
     .catch((error) => {
