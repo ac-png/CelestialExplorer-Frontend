@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from 'react';
 import { useAuth } from './contexts/AuthContext';
 
@@ -42,6 +42,13 @@ function App() {
           <Route path='/celestial_bodies/:id' element={<CelestialBodyShow />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          {!authenticated && (
+        <>
+          {['/user',].map((path) => (
+            <Route key={path} path={path} element={<Navigate to="/login" />} />
+          ))}
+        </>
+      )}
           {protectedRoutes}
         </Routes>
     </Router>
