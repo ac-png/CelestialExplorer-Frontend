@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const CELESTIAL_BODIES_URL = 'https://api.le-systeme-solaire.net/rest';
+const API_URL = 'https://api.le-systeme-solaire.net/rest';
 
 export async function fetchKnownCount() {
     try {
-        const response = await axios.get(`${CELESTIAL_BODIES_URL}/knowncount`);
+        const response = await axios.get(`${API_URL}/knowncount`);
         return response.data.knowncount;
     } catch (error) {
         console.error('Error fetching known count:', error);
@@ -14,7 +14,7 @@ export async function fetchKnownCount() {
 
 export async function fetchBodies() {
     try {
-        const response = await axios.get(`${CELESTIAL_BODIES_URL}/bodies`);
+        const response = await axios.get(`${API_URL}/bodies`);
         const sortedBodies = response.data.bodies.sort((a: any, b: any) => a.name.localeCompare(b.name));
         return sortedBodies;
     } catch (error) {
@@ -25,7 +25,7 @@ export async function fetchBodies() {
 
 export async function fetchBodyById(id: string) {
     try {
-        const response = await axios.get(`${CELESTIAL_BODIES_URL}/bodies/${id}`);
+        const response = await axios.get(`${API_URL}/bodies/${id}`);
         return response.data;
     } catch (error) {
         console.error('Error fetching body by ID:', error);
