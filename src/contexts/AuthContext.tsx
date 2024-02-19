@@ -2,7 +2,6 @@ import { useContext, createContext, useState } from 'react';
 
 const AuthContext = createContext(null);
 
-// this hook can be used to access auth info
 export function useAuth(){
     const value = useContext(AuthContext);
     return value;

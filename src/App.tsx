@@ -43,12 +43,12 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           {!authenticated && (
-        <>
-          {['/user',].map((path) => (
-            <Route key={path} path={path} element={<Navigate to="/login" />} />
-          ))}
-        </>
-      )}
+            <>
+              {['/user'].map((path) => (
+                <Route key={path} path={path} element={<Navigate to="/login" />} />
+              ))}
+            </>
+          )}
           {protectedRoutes}
         </Routes>
     </Router>
