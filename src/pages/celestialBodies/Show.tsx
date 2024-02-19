@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchBodyById } from "../API";
+import { fetchBodyById } from "../../API";
 
 function Show() {
     const { id } = useParams();
