@@ -51,11 +51,12 @@ function Login() {
 
     return (
         <>
+            <h2>Login In</h2>
             <b>Email</b><br />
             <input onChange={handleForm} type="text" name="email" value={form.email}  /><br /><br />
             <b>Password</b><br />
             <input onChange={handleForm} type="password" name="password" value={form.password} /><br /><br />
-            <button onClick={handleSubmit}>Login</button>
+            <button onClick={handleSubmit}>Log In</button>
             <p style={errorStyle}>{errorMessage}</p>
         </>
     );

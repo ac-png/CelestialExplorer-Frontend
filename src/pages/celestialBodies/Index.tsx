@@ -31,7 +31,7 @@ function Index() {
 
     return (
         <>
-            <h1>Celestial Bodies</h1>
+            <h2>Celestial Bodies</h2>
             <form>
                 <input 
                     type="text"

@@ -24,7 +24,7 @@ function Home() {
 
     return (
         <>
-            <h2>Known Count</h2>
+            <h2>Home</h2>
             {countList}
         </>
     );

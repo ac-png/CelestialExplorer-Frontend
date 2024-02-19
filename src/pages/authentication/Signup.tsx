@@ -52,24 +52,27 @@ function Signup() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">
-                <b>Name</b><br />
-                <input onChange={handleForm} type="text" name="name" value={form.name} />
-            </label><br /><br />
-            <label htmlFor="email">
-                <b>Email</b><br />
-                <input onChange={handleForm} type="text" name="email" value={form.email} />
-            </label><br /><br />
-            <label htmlFor="password">
-                <b>Password</b><br />
-                <input onChange={handleForm} type="password" name="password" value={form.password} />
-            </label><br /><br />
-            <button type="submit" className="button expanded">
-                Sign Up
-            </button>
-            <p style={errorStyle}>{errorMessage}</p>
-        </form>
+        <>
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="name">
+                    <b>Name</b><br />
+                    <input onChange={handleForm} type="text" name="name" value={form.name} />
+                </label><br /><br />
+                <label htmlFor="email">
+                    <b>Email</b><br />
+                    <input onChange={handleForm} type="text" name="email" value={form.email} />
+                </label><br /><br />
+                <label htmlFor="password">
+                    <b>Password</b><br />
+                    <input onChange={handleForm} type="password" name="password" value={form.password} />
+                </label><br /><br />
+                <button type="submit" className="button expanded">
+                    Sign Up
+                </button>
+                <p style={errorStyle}>{errorMessage}</p>
+            </form>
+        </>
     );
 }
 
