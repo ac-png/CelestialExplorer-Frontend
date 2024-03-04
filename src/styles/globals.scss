@@ -1,12 +1,12 @@
 body {
-    background-color: $background-color;
-    color: $text-color;
-    font-family: $primary-font;
-    font-size: $font-size;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--primary-font);
+    font-size: var(--font-size);
 }
 
 button {
-    background-color: $button-background-color;
-    color: $button-text-color;
-    border-radius: $border-radius;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border-radius: var(--border-radius);
 }

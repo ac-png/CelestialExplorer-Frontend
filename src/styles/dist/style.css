@@ -1,15 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --background-color: #191923;
+  --text-color: #D2D1D7;
+  --button-background-color: #8B7BDA;
+  --button-text-color: #191923;
+  --primary-font: "Exo 2", sans-serif;
+  --font-size: 16px;
+  --border-radius: 5px;
+}
+
 body {
-  background-color: #191923;
-  color: #D2D1D7;
-  font-family: "Exo 2", sans-serif;
-  font-size: 16px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+  font-size: var(--font-size);
 }
 
 button {
-  background-color: #8B7BDA;
-  color: #191923;
-  border-radius: 5px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border-radius: var(--border-radius);
 }
 
 .navbar ul {
@@ -28,7 +38,7 @@ button {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  color: #D2D1D7;
+  color: var(--text-color);
 }
 
 .navbar {

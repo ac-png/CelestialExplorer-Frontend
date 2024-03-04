@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
 
-// Colours
-$background-color: #191923;
-$text-color: #D2D1D7;
-$button-background-color: #8B7BDA;
-$button-text-color: #191923;
+:root {
+    // Colours
+    --background-color: #191923;
+    --text-color: #D2D1D7;
+    --button-background-color: #8B7BDA;
+    --button-text-color: #191923;
 
-// Fonts
-$primary-font: "Exo 2", sans-serif;
-$font-size: 16px;
+    // Fonts
+    --primary-font: "Exo 2", sans-serif;
+    --font-size: 16px;
 
-// Border radius
-$border-radius: 5px;
+    // Border radius
+    --border-radius: 5px;
+}  
