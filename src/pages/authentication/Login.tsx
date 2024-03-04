@@ -39,15 +39,29 @@ function Login() {
     };
 
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <h2>Login In</h2>
-            <b>Email</b><br />
-            <input onChange={handleForm} type="text" name="email" value={form.email}  /><br /><br />
-            <b>Password</b><br />
-            <input onChange={handleForm} type="password" name="password" value={form.password} /><br /><br />
-            <button onClick={handleSubmit}>Log In</button>
+            <label htmlFor="email">Email:</label><br />
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value={form.email} 
+                onChange={handleForm} 
+                required 
+            /><br /><br />
+            <label htmlFor="password">Password:</label><br />
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                value={form.password} 
+                onChange={handleForm} 
+                required 
+            /><br /><br />
+            <button type="submit">Log In</button><br />
             <p style={errorStyle}>{errorMessage}</p>
-        </>
+        </form>
     );
 }
 

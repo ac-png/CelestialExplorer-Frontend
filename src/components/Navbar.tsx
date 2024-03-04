@@ -18,7 +18,7 @@ function Navbar() {
                 <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
                 {(authenticated) ? (
                     <>
-                        <li><button className='button alert' onClick={logout}>Logout</button></li>
+                        <li><button onClick={logout}>Logout</button></li>
                         <li><Link to="/user">Account</Link></li>
                         <li><Link to="/observations">My Observations</Link></li>
                     </>
