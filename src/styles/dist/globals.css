@@ -9,4 +9,9 @@ button {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   border-radius: var(--border-radius);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }/*# sourceMappingURL=globals.css.map */
