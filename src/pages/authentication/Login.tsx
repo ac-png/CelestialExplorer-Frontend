@@ -1,7 +1,7 @@
-import { loginUser } from '../../apiRoutes/auth';
+import { loginUser } from '../../services/APIService/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../services/AuthService';
 
 function Login() {
     const { onAuthenticated } = useAuth();

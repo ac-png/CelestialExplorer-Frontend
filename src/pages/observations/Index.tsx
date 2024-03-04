@@ -1,4 +1,4 @@
-import { fetchObservations } from '../../apiRoutes/observations';
+import { fetchObservations } from '../../services/APIService/observations';
 import { useEffect, useState } from "react";
 
 function Index () {

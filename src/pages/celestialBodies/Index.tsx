@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchBodies } from "../../apiRoutes/bodies";
+import { fetchBodies } from "../../services/APIService/bodies";
 
 function Index() {
     const [bodies, setBodies] = useState([]);

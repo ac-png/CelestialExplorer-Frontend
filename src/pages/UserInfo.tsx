@@ -1,4 +1,4 @@
-import { getUserData } from '../apiRoutes/auth';
+import { getUserData } from '../services/APIService/auth';
 import { useEffect, useState } from "react";
 
 function User () {

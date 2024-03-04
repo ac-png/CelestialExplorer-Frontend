@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { fetchKnownCount } from '../apiRoutes/bodies';
+import { fetchKnownCount } from '../services/APIService/bodies';
 
 function Home() {
     const [counts, setCounts] = useState([]);

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect } from 'react';
-import { useAuth } from './contexts/AuthContext';
+import { useAuth } from './services/AuthService';
 
 import Home from './pages/Home';
 import CelestialBodyIndex from './pages/celestialBodies/Index';

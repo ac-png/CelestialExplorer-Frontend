@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { fetchBodyById } from "../../apiRoutes/bodies";
-import { useAuth } from "../../contexts/AuthContext";
+import { fetchBodyById } from "../../services/APIService/bodies";
+import { useAuth } from "../../services/AuthService";
 
 function Show() {
     const { id } = useParams();
