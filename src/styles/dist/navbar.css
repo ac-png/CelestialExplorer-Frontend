@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  padding: 5px;
+}
+
+.navbar ul li .link {
+  text-decoration: none;
+}
+
+.navbar h1 {
+  font-size: 41px;
+}/*# sourceMappingURL=navbar.css.map */

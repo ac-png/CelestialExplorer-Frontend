@@ -10,4 +10,25 @@ button {
   background-color: #8B7BDA;
   color: #191923;
   border-radius: 5px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li .link {
+  text-decoration: none;
+  color: #8B7BDA;
+  padding: 5px;
+  box-shadow: 5px;
+}
+
+.navbar h1 {
+  font-size: 41px;
 }/*# sourceMappingURL=style.css.map */

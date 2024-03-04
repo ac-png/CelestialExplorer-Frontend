@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li .link {
+    text-decoration: none;
+    color: $button-background-color;
+    padding: 5px;
+}
+
+.navbar h1 {
+    font-size: 41px;
+}
