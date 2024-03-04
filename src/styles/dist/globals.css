@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  background-color: #191923;
+  color: #D2D1D7;
+  font-family: "Exo 2", sans-serif;
+  font-size: 22px;
+}
+
+button {
+  background-color: #8B7BDA;
+  color: #191923;
+  border-radius: 5px;
+}/*# sourceMappingURL=globals.css.map */

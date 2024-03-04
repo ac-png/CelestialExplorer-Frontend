@@ -1,0 +1,12 @@
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $primary-font;
+    font-size: $font-size;
+}
+
+button {
+    background-color: $button-background-color;
+    color: $button-text-color;
+    border-radius: $border-radius;
+}

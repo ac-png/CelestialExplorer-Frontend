@@ -1,10 +1,8 @@
 import { fetchObservations } from '../../apiRoutes/observations';
 import { useEffect, useState } from "react";
-import { useAuth } from "../../contexts/AuthContext";
 
 function Index () {
-    const { authenticated } = useAuth();
-    const [obsevation, setObservation] = useState(null);
+    const [observation, setObservation] = useState([]);
 
     useEffect(() => {
         let token = localStorage.getItem('token');

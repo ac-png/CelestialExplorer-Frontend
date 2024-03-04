@@ -27,16 +27,18 @@ function Show() {
                     <h2>{body.englishName}</h2>
                 </div>
             )}
+            <h4>Observations</h4>
             {(authenticated) ? (
-                    <>
-                        <p>Hello!</p>
-                    </>
-                ) : ""}
-                {(!authenticated) ? (
-                    <>
-                        <p>You are not logged in! <Link to="/login" className='button'>Login</Link> or <Link to="/signup">Signup</Link></p>
-                    </>
-                ) : ""}
+                <>
+                    <p>Hello!</p>
+                </>
+            ) : ""}
+            {(!authenticated) ? (
+                <>
+                    <p>You are not logged in!</p>
+                    <p><Link to="/login" className='button'>Login</Link> or <Link to="/signup">Signup</Link></p>
+                </>
+            ) : ""}
         </>
     );
 }

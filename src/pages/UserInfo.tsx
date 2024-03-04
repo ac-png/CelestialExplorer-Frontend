@@ -1,9 +1,7 @@
 import { getUserData } from '../apiRoutes/auth';
 import { useEffect, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
 
 function User () {
-    const { authenticated } = useAuth();
     const [user, setUser] = useState(null);
 
     useEffect(() => {
