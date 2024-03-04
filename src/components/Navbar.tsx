@@ -14,19 +14,19 @@ function Navbar() {
         <div className='navbar'>
             <h1>CelestialExplorer</h1>
             <ul>
-                <li><Link className='link' to='/'>Home</Link></li>
-                <li><Link className='link' to='/celestial_bodies'>Celestial Bodies</Link></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
                 {(authenticated) ? (
                     <>
                         <li><button className='button alert' onClick={logout}>Logout</button></li>
-                        <li><Link className='link' to="/user">Account</Link></li>
-                        <li><Link className='link' to="/observations">My Observations</Link></li>
+                        <li><Link to="/user">Account</Link></li>
+                        <li><Link to="/observations">My Observations</Link></li>
                     </>
                 ) : ""}
                 {(!authenticated) ? (
                     <>
-                        <li><Link className='link' to="/login">Login</Link></li>
-                        <li><Link className='link' to="/signup">Signup</Link></li>
+                        <li><Link to="/login">Login</Link></li>
+                        <li><Link to="/signup">Signup</Link></li>
                     </>
                 ) : ""}
             </ul>

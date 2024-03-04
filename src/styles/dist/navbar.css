@@ -1,21 +1,17 @@
-.navbar {
-  display: flex;
-  align-items: center;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.navbar ul {
-  display: flex;
-  list-style: none;
+li {
+  float: left;
 }
 
-.navbar ul li {
-  padding: 5px;
-}
-
-.navbar ul li .link {
+li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-}
-
-.navbar h1 {
-  font-size: 41px;
 }/*# sourceMappingURL=navbar.css.map */

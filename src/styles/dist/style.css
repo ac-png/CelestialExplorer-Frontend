@@ -12,23 +12,21 @@ button {
   border-radius: 5px;
 }
 
-.navbar {
-  display: flex;
-  align-items: center;
-}
-
 .navbar ul {
-  display: flex;
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-.navbar ul li .link {
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: #8B7BDA;
-  padding: 5px;
-  box-shadow: 5px;
-}
-
-.navbar h1 {
-  font-size: 41px;
+  color: #D2D1D7;
 }/*# sourceMappingURL=style.css.map */
