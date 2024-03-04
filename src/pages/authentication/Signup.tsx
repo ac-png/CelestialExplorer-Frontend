@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { registerUser } from '../../apiRoutes/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -18,30 +18,19 @@ function Signup() {
     });
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        axios
-            .post('http://localhost/api/auth/register', {
-                name: form.name,
-                email: form.email,
-                password: form.password,
-            })
-            .then((response) => {
-                onAuthenticated(true, response.data.token);
-                navigate('/');
-            })
-            .catch(err => {
-                console.error(err);
-            
-                if (err.response && err.response.data && err.response.data.message) {
-                    console.log(err.response.data.message);
-                    setErrorMessage(err.response.data.message);
-                } else {
-                    setErrorMessage("An unexpected error occurred");
-                }
-            });
+    
+        try {
+            const data = await registerUser(form.name, form.email, form.password);
+            onAuthenticated(true, data.token);
+            navigate('/');
+        } catch (error) {
+            console.error(error);
+            setErrorMessage(error);
+        }
     };
+    
 
     const handleForm = (e) => {
         const { name, value } = e.target;

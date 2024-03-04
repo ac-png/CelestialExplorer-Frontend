@@ -20,6 +20,7 @@ function Navbar() {
                     <>
                         <li><button className='button alert' onClick={logout}>Logout</button></li>
                         <li><Link to="/user">Account</Link></li>
+                        <li><Link to="/observations">My Observations</Link></li>
                     </>
                 ) : ""}
                 {(!authenticated) ? (

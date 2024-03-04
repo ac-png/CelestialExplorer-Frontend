@@ -1,4 +1,4 @@
-import axios from 'axios';
+import { loginUser } from '../../apiRoutes/auth';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
@@ -17,29 +17,18 @@ function Login() {
     });
     const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        axios.post('http://localhost/api/auth/login', {
-            email: form.email,
-            password: form.password
-        })
-        .then(response => {
-            onAuthenticated(true, response.data.token);
+    
+        try {
+            const data = await loginUser(form.email, form.password);
+            onAuthenticated(true, data.token);
             navigate('/');
-        })
-        .catch(err => {
-            console.error(err);
-        
-            if (err.response && err.response.data && err.response.data.message) {
-                console.log(err.response.data.message);
-                setErrorMessage(err.response.data.message);
-            } else {
-                setErrorMessage("An unexpected error occurred");
-            }
-        });
-        
-    };
+        } catch (error) {
+            console.error(error);
+            setErrorMessage(error);
+        }
+    };    
 
     const handleForm = (e) => {
         const { name, value } = e.target;

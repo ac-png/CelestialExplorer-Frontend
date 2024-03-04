@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { fetchBodyById } from "../../API";
+import { useParams, Link } from "react-router-dom";
+import { fetchBodyById } from "../../apiRoutes/bodies";
+import { useAuth } from "../../contexts/AuthContext";
 
 function Show() {
     const { id } = useParams();
+    const { authenticated, onAuthenticated } = useAuth();
     const [body, setBody] = useState(null);
 
     useEffect(() => {
@@ -25,6 +27,16 @@ function Show() {
                     <h2>{body.englishName}</h2>
                 </div>
             )}
+            {(authenticated) ? (
+                    <>
+                        <p>Hello!</p>
+                    </>
+                ) : ""}
+                {(!authenticated) ? (
+                    <>
+                        <p>You are not logged in! <Link to="/login" className='button'>Login</Link> or <Link to="/signup">Signup</Link></p>
+                    </>
+                ) : ""}
         </>
     );
 }

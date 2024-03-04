@@ -9,6 +9,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/authentication/Login";
 import Signup from "./pages/authentication/Signup";
 import UserInfo from "./pages/UserInfo";
+import ObservationIndex from "./pages/observations/Index";
 
 import Navbar from "./components/Navbar";
 
@@ -28,6 +29,7 @@ function App() {
     protectedRoutes = (
       <>
         <Route path='/user' element={<UserInfo />} />
+        <Route path='/observations' element={<ObservationIndex />} />
       </>
     );
   }

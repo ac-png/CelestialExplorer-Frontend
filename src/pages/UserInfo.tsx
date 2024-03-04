@@ -1,5 +1,5 @@
+import { getUserData } from '../apiRoutes/auth';
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useAuth } from "../contexts/AuthContext";
 
 function User () {
@@ -8,18 +8,11 @@ function User () {
 
     useEffect(() => {
         let token = localStorage.getItem('token');
-        axios.get(`http://localhost/api/auth/user`, {
-                headers: {
-                    "Authorization": `Bearer ${token}`
-                }
-            })
-            .then(response => {
-                // console.log(response.data.user)
-                setUser(response.data.user);
-            })
-            .catch(err => {
-                console.error(err);
-            })
+        if (token) {
+            getUserData(token)
+                .then(user => setUser(user))
+                .catch(err => console.error(err));
+        }
     }, []);
 
     // Function to format the date and time
