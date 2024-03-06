@@ -59,7 +59,7 @@ function Index() {
             </form>
             <div className="body-grid">
                 {filteredBodies.map((body) => (
-                    <div key={body.id} className="body-card-container">
+                    <div key={body.id} className={`body-card-container ${body.bodyType.toLowerCase()}`}>
                         <BodyCard
                             id={body.id}
                             englishName={body.englishName}

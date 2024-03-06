@@ -6,7 +6,7 @@ const BodyCard = (props) => {
         <Link 
             to={`/celestial_bodies/${props.id}`}
         >
-            <div key={props.id}>
+            <div key={props.id} className="body-card-text">
                 <p><strong>{props.englishName}</strong></p>
             </div>
         </Link>

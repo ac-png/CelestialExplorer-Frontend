@@ -114,14 +114,36 @@ select {
 .body-card-container {
   width: 100%;
   text-align: center;
-  border: 1px solid var(--text-color);
   border-radius: var(--border-radius);
   padding: 15px 5px;
 }
 
-.body-card-container:hover {
+.body-card-text {
   color: var(--button-text-color);
-  background-color: var(--button-background-color);
+}
+
+.planet {
+  background-color: #f28343;
+}
+
+.star {
+  background-color: #cdba4e;
+}
+
+.moon {
+  background-color: #8ae95a;
+}
+
+.asteroid {
+  background-color: #41e590;
+}
+
+.comet {
+  background-color: #4cafc8;
+}
+
+.dwarf-planet {
+  background-color: #596eef;
 }
 
 .home-container {
