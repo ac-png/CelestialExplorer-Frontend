@@ -1,14 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const BodyCard = (props) => {
-    const [isHovered, setIsHovered] = useState(false);
     
     return (
         <Link 
-            to={`/celestial_bodies/${props.id}`} 
-            onMouseOver={() => setIsHovered(true)} 
-            onMouseOut={() => setIsHovered(false)}
+            to={`/celestial_bodies/${props.id}`}
         >
             <div key={props.id}>
                 <p><strong>{props.englishName}</strong></p>
