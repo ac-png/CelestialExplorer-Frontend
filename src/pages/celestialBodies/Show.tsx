@@ -35,8 +35,11 @@ function Show() {
             ) : ""}
             {(!authenticated) ? (
                 <>
-                    <p>You are not logged in!</p>
-                    <p><Link to="/login" className='button'>Login</Link> or <Link to="/signup">Signup</Link></p>
+                    <div className="alert alert-danger" role="alert">
+                        <p>You are not logged in!</p>
+                        <p><Link to="/login" className='button'>Login</Link> or <Link to="/signup">Signup</Link></p>
+                    </div>
+
                 </>
             ) : ""}
         </>

@@ -33,6 +33,7 @@ function User () {
                     <p>Email Verification: {user.email_verified_at ? "Verified" : "Not Verified"}</p>
                     <p>Account Created: {formatDateTime(user.created_at)}</p>
                     <p>Account Updated: {formatDateTime(user.updated_at)}</p>
+                    <button className='delete-button'>Delete Account</button>
                 </div>
             )}
         </>

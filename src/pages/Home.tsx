@@ -14,19 +14,15 @@ function Home() {
         });
     }, []);
 
-    const countList = counts.map((count) => (
-        <div key={count.id}>
-            <p>{count.id}</p>
-            <p>{count.knownCount}</p>
-            <hr />
-        </div>
-    ));
-
     return (
-        <>
-            <h2>Home</h2>
-            {countList}
-        </>
+        <div className="home-container">
+            {counts.map((count, index) => (
+                <div key={index} className="home-item">
+                    <p>{count.id}</p>
+                    <p>{count.knownCount}</p>
+                </div>
+            ))}
+        </div>
     );
 }
 

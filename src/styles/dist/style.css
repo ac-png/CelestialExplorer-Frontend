@@ -4,6 +4,7 @@
   --text-color: #D2D1D7;
   --button-background-color: #8B7BDA;
   --button-text-color: #191923;
+  --danger-color: #721c24;
   --primary-font: "Exo 2", sans-serif;
   --font-size: 16px;
   --border-radius: 5px;
@@ -20,6 +21,15 @@ button {
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   border-radius: var(--border-radius);
+  border: none;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+.delete-button {
+  background-color: var(--danger-color);
+  color: var(--text-color);
 }
 
 a {
@@ -32,6 +42,25 @@ a {
   margin-right: 30px;
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.alert {
+  padding: 15px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.alert-danger {
+  background-color: var(--danger-color);
+}
+
+.alert-danger a {
+  background-color: var(--text-color);
+  color: var(--danger-color);
+  padding: 5px;
+  border-radius: var(--border-radius);
 }
 
 .navbar ul {
@@ -71,13 +100,6 @@ select {
   margin: 5px;
 }
 
-button {
-  border: none;
-  padding: 15px;
-  text-align: center;
-  display: inline-block;
-}
-
 .container {
   display: flex;
   justify-content: center;
@@ -100,4 +122,17 @@ button {
 .body-card-container:hover {
   color: var(--button-text-color);
   background-color: var(--button-background-color);
+}
+
+.home-container {
+  display: flex;
+}
+
+.home-item {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 20px 50px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: var(--border-radius);
 }/*# sourceMappingURL=style.css.map */
