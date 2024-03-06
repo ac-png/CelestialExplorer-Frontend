@@ -60,7 +60,15 @@ input {
   border-radius: var(--border-radius);
   padding: 10px;
   border: none;
-  margin-top: 5px;
+  margin: 10px;
+  margin-left: 0;
+}
+
+select {
+  border-radius: var(--border-radius);
+  padding: 10px;
+  border: none;
+  margin: 5px;
 }
 
 button {
@@ -73,4 +81,23 @@ button {
 .container {
   display: flex;
   justify-content: center;
+}
+
+.body-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.body-card-container {
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--text-color);
+  border-radius: var(--border-radius);
+  padding: 15px 5px;
+}
+
+.body-card-container:hover {
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
 }/*# sourceMappingURL=style.css.map */

@@ -2,7 +2,15 @@ input {
     border-radius: var(--border-radius);
     padding: 10px;
     border: none;
-    margin-top: 5px;
+    margin: 10px;
+    margin-left: 0;
+}
+
+select {
+    border-radius: var(--border-radius);
+    padding: 10px;
+    border: none;
+    margin: 5px;
 }
 
 button {
