@@ -20,7 +20,8 @@ function Navbar() {
                     <>
                         <li key="account"><Link to="/user">Account</Link></li>
                         <li key="observations"><Link to="/observations">My Observations</Link></li>
-                        <li key="logout"><button onClick={logout}>Logout</button></li>
+                        <li key="logout" onClick={logout}><a href="#">Logout</a></li>
+
                     </>
                 ) : (
                     <>

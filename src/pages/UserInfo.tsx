@@ -13,7 +13,6 @@ function User () {
         }
     }, []);
 
-    // Function to format the date and time
     const formatDateTime = (dateTimeString) => {
         const dateTime = new Date(dateTimeString);
         const day = dateTime.getDate().toString().padStart(2, '0');
