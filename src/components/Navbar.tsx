@@ -12,24 +12,27 @@ function Navbar() {
     }
 
     return (
-        <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
-            <li style={{ float: 'right' }}>
-                {authenticated ? (
-                    <>
-                        <Link to="/user">Profile</Link>
-                        <Link to="/observations">Dashboard</Link>
-                        <button onClick={logout}>Logout</button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
-                    </>
-                )}
-            </li>
-        </ul>
+        <>
+            <h1 className='main-title'>CelestialExplorer</h1>
+            <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
+                <ul style={{ float: 'right' }}>
+                    {authenticated ? (
+                        <>
+                            <li><Link to="/user">Profile</Link></li>
+                            <li><Link to="/observations">Dashboard</Link></li>
+                            <li><button onClick={logout}>Logout</button></li>
+                        </>
+                    ) : (
+                        <>
+                            <li><Link to="/login">Login</Link></li>
+                            <li><Link to="/signup">Signup</Link></li>
+                        </>
+                    )}
+                </ul>
+            </ul>
+        </>
     );
 }
 

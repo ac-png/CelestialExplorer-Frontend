@@ -91,6 +91,11 @@ li a {
   text-decoration: none;
 }
 
+.main-title {
+  text-align: center;
+  font-size: 45px;
+}
+
 input {
   border-radius: var(--border-radius);
   padding: 10px;
