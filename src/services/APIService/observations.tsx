@@ -14,3 +14,16 @@ export const fetchObservations = async (token) => {
         throw error.response ? error.response.data : 'An unexpected error occurred';
     }
 };
+
+export const fetchObservationByUUID = async (token, uuid) => {
+    try {
+        const response = await axios.get(`${API_URL}/observations/${uuid}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.data.data;
+    } catch (error) {
+        throw error.response ? error.response.data : 'An unexpected error occurred';
+    }
+};
