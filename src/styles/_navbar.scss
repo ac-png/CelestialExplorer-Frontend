@@ -1,21 +1,17 @@
-.navbar ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.navbar li {
+li {
     float: left;
 }
 
-.navbar li a {
+li a {
     display: block;
     text-align: center;
     padding: 14px 16px;
-}
-
-.navbar {
-    font-size: 20px;
-    text-align: center;
+    text-decoration: none;
 }

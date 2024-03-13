@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../services/AuthService";
 
@@ -9,28 +10,26 @@ function Navbar() {
         onAuthenticated(false);
         navigate('/login');
     }
-    
+
     return (
-        <div className='navbar'>
-            <h1>CelestialExplorer</h1>
-            <ul>
-                <li key="home"><Link to='/'>Home</Link></li>
-                <li key="celestial_bodies"><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
+        <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>
+            <li style={{ float: 'right' }}>
                 {authenticated ? (
                     <>
-                        <li key="account"><Link to="/user">Account</Link></li>
-                        <li key="observations"><Link to="/observations">My Observations</Link></li>
-                        <li key="logout" onClick={logout}><a href="#">Logout</a></li>
-
+                        <Link to="/user">Profile</Link>
+                        <Link to="/observations">Dashboard</Link>
+                        <button onClick={logout}>Logout</button>
                     </>
                 ) : (
                     <>
-                        <li key="login"><Link to="/login">Login</Link></li>
-                        <li key="signup"><Link to="/signup">Signup</Link></li>
+                        <Link to="/login">Login</Link>
+                        <Link to="/signup">Signup</Link>
                     </>
                 )}
-            </ul>
-        </div>
+            </li>
+        </ul>
     );
 }
 
