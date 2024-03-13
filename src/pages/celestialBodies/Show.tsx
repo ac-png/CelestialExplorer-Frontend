@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchBodyById } from "../../services/APIService/bodies";
-import { fetchObservations } from '../../services/APIService/observations';
+import { fetchObservationByBody } from '../../services/APIService/observations';
 import { formatDate, formatTime } from '../../utilities/format';
 import { useAuth } from "../../services/AuthService";
 
@@ -22,7 +22,7 @@ function Show() {
         });
 
         let token = localStorage.getItem('token');
-        fetchObservations(token)
+        fetchObservationByBody(token, id)
         .then((response) => {
             if (response && response.message === "No observations found!") {
                 setObservations([]);
@@ -43,24 +43,27 @@ function Show() {
         <div>
             <h2>{body.englishName}</h2>
             <h4>Observations</h4>
-            {(authenticated && !isLoading) && (
-                <Link className="button" to="/">Add Observation</Link>
-            )}
-            {isLoading ? (
-                <p>Loading...</p>
-            ) : observations.length === 0 ? (
-                <p>No Observations Found</p>
+            {!authenticated ? (
+                <p>Please <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link> to view observations.</p>
             ) : (
-                observations.map((observation) => (
-                    <div key={observation.id}>
-                        <p>{observation.location_id}</p>
-                        <p>{observation.celestial_body_id}</p>
-                        <p>{formatDate(observation.date)} {formatTime(observation.time)}</p>
-                        <p>{observation.description}</p>
-                        <p>{observation.rating}</p>
-                        <hr />
-                    </div>
-                ))
+                <>
+                    {isLoading ? (
+                        <p>Loading...</p>
+                    ) : observations.length === 0 ? (
+                        <p>No Observations Found</p>
+                    ) : (
+                        observations.map((observation) => (
+                            <Link to={`/observations/${observation.uuid}`} key={observation.id} className="card-link">
+                                <div className="card">
+                                    <p><strong>Name of Object: </strong>{observation.celestial_body_id}</p>
+                                    <p><strong>Date and Time: </strong>{formatDate(observation.date)} {formatTime(observation.time)}</p>
+                                    <p><strong>Description: </strong>{observation.description}</p>
+                                    <p><strong>Rating: </strong>{observation.rating} out of 5</p>
+                                </div>
+                            </Link>
+                        ))
+                    )}
+                </>
             )}
         </div>
     );
