@@ -27,7 +27,7 @@ function Index() {
 
     return (
         <div>
-            <div><Link className="button" to='/'>Add Observation</Link></div>
+            <div><Link className="button" to='/dashboard/observations/create'>Add Observation</Link></div>
             {isLoading ? (
                 <p>Loading...</p>
             ) : observations.length === 0 ? (

@@ -40,3 +40,23 @@ export const fetchObservationByBody = async (token, celestial_body_id) => {
         throw error.response ? error.response.data : 'An unexpected error occurred';
     }
 };
+
+export const CreateObservation = async (token, sky_conditions, celestial_body_id, rating, description, date, time) => {
+    try {
+        const response = await axios.post(`${API_URL}/dashboard/observations`, {
+            sky_conditions,
+            celestial_body_id,
+            rating,
+            description,
+            date,
+            time
+        }, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.data;
+    } catch (error) {
+        throw error.response ? error.response.data : 'An unexpected error occurred';
+    }
+};

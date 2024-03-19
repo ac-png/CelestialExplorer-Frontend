@@ -11,6 +11,7 @@ import Signup from "./pages/authentication/Signup";
 import UserInfo from "./pages/UserInfo";
 import ObservationIndex from "./pages/observations/Index";
 import ObservationShow from "./pages/observations/Show";
+import ObservationCreate from "./pages/observations/Create";
 
 import Navbar from "./components/Navbar";
 
@@ -31,6 +32,7 @@ function App() {
       <>
         <Route path='/user' element={<UserInfo />} />
         <Route path='/dashboard/observations' element={<ObservationIndex />} />
+        <Route path='/dashboard/observations/create' element={<ObservationCreate />} />
         <Route path='/dashboard/observations/:uuid' element={<ObservationShow />} />
       </>
     );
