@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from "../services/AuthService";
 
@@ -21,7 +20,7 @@ function Navbar() {
                     {authenticated ? (
                         <>
                             <li><Link to="/user">Profile</Link></li>
-                            <li><Link to="/observations">Dashboard</Link></li>
+                            <li><Link to="/dashboard/observations">Dashboard</Link></li>
                             <li><button onClick={logout}>Logout</button></li>
                         </>
                     ) : (

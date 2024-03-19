@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost/api/auth';
+const API_URL = 'http://localhost/api';
 
 export const fetchObservations = async (token) => {
     try {
-        const response = await axios.get(`${API_URL}/observations`, {
+        const response = await axios.get(`${API_URL}/dashboard/observations/user`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -17,7 +17,7 @@ export const fetchObservations = async (token) => {
 
 export const fetchObservationByUUID = async (token, uuid) => {
     try {
-        const response = await axios.get(`${API_URL}/observations/${uuid}`, {
+        const response = await axios.get(`${API_URL}/dashboard/observations/${uuid}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -30,7 +30,7 @@ export const fetchObservationByUUID = async (token, uuid) => {
 
 export const fetchObservationByBody = async (token, celestial_body_id) => {
     try {
-        const response = await axios.get(`${API_URL}/observations/body/${celestial_body_id}`, {
+        const response = await axios.get(`${API_URL}/dashboard/observations/body/${celestial_body_id}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

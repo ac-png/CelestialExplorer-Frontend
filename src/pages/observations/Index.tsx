@@ -34,7 +34,7 @@ function Index() {
                 <p>No Observations Found</p>
             ) : (
                 observations.map((observation) => (
-                    <Link to={`/observations/${observation.uuid}`} key={observation.id} className="card-link">
+                    <Link to={`/dashboard/observations/${observation.uuid}`} key={observation.id} className="card-link">
                         <div className="card">
                             <p><strong>Name of Object: </strong>{observation.celestial_body_id}</p>
                             <p><strong>Date and Time: </strong>{formatDate(observation.date)} {formatTime(observation.time)}</p>

@@ -30,8 +30,8 @@ function App() {
     protectedRoutes = (
       <>
         <Route path='/user' element={<UserInfo />} />
-        <Route path='/observations' element={<ObservationIndex />} />
-        <Route path='/observations/:uuid' element={<ObservationShow />} />
+        <Route path='/dashboard/observations' element={<ObservationIndex />} />
+        <Route path='/dashboard/observations/:uuid' element={<ObservationShow />} />
       </>
     );
   }
