@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchBodyById } from "../../services/APIService/bodies";
 import { fetchObservationByBody } from '../../services/APIService/observations';
+import { nasaImage,unsplashImage } from '../../services/APIService/images';
 import { formatDate, formatTime } from '../../utilities/format';
 import { useAuth } from "../../services/AuthService";
 
@@ -9,6 +10,7 @@ function Show() {
     const { id } = useParams();
     const { authenticated } = useAuth();
     const [body, setBody] = useState(null);
+    const [image, setImage] = useState(null);
     const [observations, setObservations] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -16,11 +18,18 @@ function Show() {
         fetchBodyById(id)
         .then((response) => {
             setBody(response);
+            nasaImage(response.englishName)
+            .then((imageResponse) => {
+                setImage(imageResponse);
+            })
+            .catch((error) => {
+                console.error('Error setting body:', error);
+            });
         })
         .catch((error) => {
             console.error('Error setting body:', error);
         });
-
+    
         let token = localStorage.getItem('token');
         fetchObservationByBody(token, id)
         .then((response) => {
@@ -36,12 +45,19 @@ function Show() {
             setIsLoading(false);
         });
     }, [id]);
+    
 
     if (!body) return <h3>Body not found</h3>;
 
     return (
         <div>
             <h2>{body.englishName}</h2>
+            {image && image.links && image.links.length > 0 && (
+                <img src={image.links[0].href} alt="" />
+            )}
+            {/* {image && image.links && image.links && (
+                <img src={image.links['self']} alt="" />
+            )} */}
             <h4>Observations</h4>
             {!authenticated ? (
                 <p>Please <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link> to view observations.</p>
