@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getTodayDate, getCurrentTime } from '../../utilities/format';
 import { CreateObservation } from '../../services/APIService/observations';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../services/AuthService';
+import { fetchBodies } from "../../services/APIService/bodies";
 
 function Create() {
     const { onAuthenticated } = useAuth();
     const navigate = useNavigate();
+    const [bodies, setBodies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
     const [form, setForm] = useState({
         sky_conditions: '',
         celestial_body_id: '',
@@ -15,6 +20,19 @@ function Create() {
         date: getTodayDate(),
         time: getCurrentTime()
     });
+
+    useEffect(() => {
+        fetchBodies()
+        .then((bodies) => {
+            setBodies(bodies);
+            setLoading(false);
+        })
+        .catch((error) => {
+            console.error('Error fetching bodies:', error);
+            setError(error);
+            setLoading(false);
+        });
+    }, []);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -47,7 +65,6 @@ function Create() {
             console.error('Error creating observation:', error);
         }
     };
-    
 
     return (
         <div className='crud-form'>
@@ -64,15 +81,18 @@ function Create() {
                     required
                 /><br />
                 <label htmlFor="celestial_body_id">Celestial Body</label><br />
-                <input
-                    type="text"
+                <select
                     id="celestial_body_id"
                     name="celestial_body_id"
                     value={form.celestial_body_id}
                     onChange={handleChange}
-                    placeholder="Start typing to see suggestions"
                     required
-                /><br />
+                >
+                    <option value="">Select a Celestial Body</option>
+                    {bodies.map(body => (
+                        <option key={body.id} value={body.id}>{body.name}</option>
+                    ))}
+                </select><br />
                 <label htmlFor="rating">Rating</label><br />
                 <input
                     type="number"
