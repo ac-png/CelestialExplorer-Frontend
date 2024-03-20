@@ -12,7 +12,7 @@ function Navbar() {
 
     return (
         <>
-            <h1 className='main-title'>CelestialExplorer</h1>
+            <h1 className='main-title'><Link to='/'>CelestialExplorer</Link></h1>
             <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/celestial_bodies'>Celestial Bodies</Link></li>

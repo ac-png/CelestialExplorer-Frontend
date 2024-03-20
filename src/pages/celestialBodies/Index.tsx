@@ -42,6 +42,15 @@ function Index() {
         <>
             <h2>Celestial Bodies</h2>
             <form>
+                <div className='legend'>
+                    <ul>
+                        {bodyTypes.map((type, index) => (
+                            <li key={index} className={`${type.toLowerCase()}`}>
+                                {type}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
                 <input 
                     id="searchInput"
                     type="text"

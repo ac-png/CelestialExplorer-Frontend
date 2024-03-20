@@ -15,6 +15,13 @@
     color: var(--button-text-color);
 }
 
+.legend ul li {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: var(--border-radius);
+    color: var(--button-text-color);
+}
+
 .planet {
     background-color: #f28343;
 }
