@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { fetchObservationByUUID } from '../../services/APIService/observations';
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { fetchObservationByUUID, deleteByUUID } from '../../services/APIService/observations';
 import { formatDate, formatTime } from '../../utilities/format';
 
 function Show() {
     const { uuid } = useParams();
+    const navigate = useNavigate();
     const [observation, setObservation] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-
 
     useEffect(() => {
         let token = localStorage.getItem('token');
@@ -28,6 +28,19 @@ function Show() {
             });
     }, [uuid]);
 
+    const handleDelete = () => {
+        let token = localStorage.getItem('token');
+        setIsLoading(true);
+        deleteByUUID(token, uuid)
+            .then(() => {
+                navigate('/dashboard/observations');
+            })
+            .catch((error) => {
+                console.error('Error deleting observation:', error);
+                setIsLoading(false);
+            });
+    };
+
     return (
         <div>
             {isLoading ? (
@@ -42,6 +55,7 @@ function Show() {
                         <p><strong>Location: </strong>{observation.location_id}</p>
                         <p><strong>Rating: </strong>{observation.rating} out of 5</p>
                         <p><strong>Sky Conditions: </strong>{observation.sky_conditions}</p>
+                        <button className='delete-button' onClick={handleDelete}>Delete Observation</button>
                     </div>
                 ) : (
                     <p>No observation found.</p>

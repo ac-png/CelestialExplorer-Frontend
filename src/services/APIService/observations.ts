@@ -60,3 +60,16 @@ export const CreateObservation = async (token, sky_conditions, celestial_body_id
         throw error.response ? error.response.data : 'An unexpected error occurred';
     }
 };
+
+export const deleteByUUID = async (token, uuid) => {
+    try {
+        const response = await axios.delete(`${API_URL}/dashboard/observations/${uuid}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        return response.data.data;
+    } catch (error) {
+        throw error.response ? error.response.data : 'An unexpected error occurred';
+    }
+};
