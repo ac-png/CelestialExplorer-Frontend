@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect } from 'react';
 import { useAuth } from './services/AuthService';
 
@@ -11,6 +11,7 @@ import UserInfo from "./pages/UserInfo";
 import Index from "./pages/observations/Index";
 import Create from "./pages/observations/Create";
 import BodyIndex from "./pages/celestialBodies/Index";
+import BodyShow from "./pages/celestialBodies/Show";
 
 function App() {
   const { authenticated, onAuthenticated } = useAuth();
@@ -42,6 +43,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/celestial-bodies' element={<BodyIndex />} />
+          <Route path='/celestial-bodies/:id' element={<BodyShow />} />
           {protectedRoutes}
         </Routes>
       </Router>

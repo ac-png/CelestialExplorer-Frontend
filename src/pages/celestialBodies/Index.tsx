@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchBodies } from '../../services/APIService/bodies';
+import { Link } from 'react-router-dom';
 
 function Index() {
     const [bodies, setBodies] = useState([]);
@@ -72,13 +73,13 @@ function Index() {
                             </h2>
                         </div>
                         <div className="grid grid-cols-3 gap-4 mt-3">
-                            {bodies
-                                .filter(body => !selectedBodyType || body.bodyType.toLowerCase() === selectedBodyType.toLowerCase())
-                                .map((body) => (
+                            {bodies.filter(body => !selectedBodyType || body.bodyType.toLowerCase() === selectedBodyType.toLowerCase()).map((body) => (
+                                <Link to={`/celestial-bodies/${body.id}`} key={body.id}>
                                     <div key={body.id} className={`${getBodyTypeClassName(body.bodyType)} p-4 text-center`}>
                                         <h2 className="font-bold text-xl">{body.englishName}</h2>
                                         <h2>{body.bodyType}</h2>
                                     </div>
+                                </Link>
                             ))}
                         </div>
                     </>
