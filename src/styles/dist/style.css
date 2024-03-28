@@ -54,4 +54,34 @@ form textarea {
 button {
   background-color: var(--button-background-color);
   color: var(--text-color);
+}
+
+.asteroid {
+  background-color: #87CEEB;
+  color: var(--card-text-color);
+}
+
+.moon {
+  background-color: #98FB98;
+  color: var(--card-text-color);
+}
+
+.comet {
+  background-color: #FFDAB9;
+  color: var(--card-text-color);
+}
+
+.planet {
+  background-color: #E6E6FA;
+  color: var(--card-text-color);
+}
+
+.dwarf-planet {
+  background-color: #FF7F50;
+  color: var(--card-text-color);
+}
+
+.star {
+  background-color: #708090;
+  color: var(--card-text-color);
 }/*# sourceMappingURL=style.css.map */

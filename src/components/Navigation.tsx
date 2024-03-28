@@ -11,16 +11,17 @@ function Navigation() {
     }
     
     return (
-        <nav className="p-6">
-            <div className="items-center mr-6 inline-block">
+        <nav className="p-6 flex justify-between items-center">
+            <div>
                 <span className="font-semibold text-xl tracking-tight">CelestialExplorer</span>
+                <Link className="ml-4 hover:text-white" to='/celestial-bodies'>CelestialBodies</Link>
             </div>
-            <div className="text-sm inline-block">
+            <div className="text-sm">
                 {authenticated ? (
                     <>
                         <Link className="mr-4 hover:text-white" to='/user'>Profile</Link>
                         <Link className="mr-4 hover:text-white" to='/dashboard/observations'>Dashboard</Link>
-                        <button className='justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' onClick={logout}>Logout</button>
+                        <button className='rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' onClick={logout}>Logout</button>
                     </>
                 ) : (
                     <>

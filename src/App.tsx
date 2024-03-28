@@ -8,6 +8,7 @@ import Signup from "./pages/auth/Signup";
 import UserInfo from "./pages/UserInfo";
 import Index from "./pages/observations/Index";
 import Create from "./pages/observations/Create";
+import BodyIndex from "./pages/celestialBodies/Index";
 
 function App() {
   const { authenticated, onAuthenticated } = useAuth();
@@ -37,6 +38,7 @@ function App() {
         <Routes>
         <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/celestial-bodies' element={<BodyIndex />} />
           {protectedRoutes}
         </Routes>
       </Router>

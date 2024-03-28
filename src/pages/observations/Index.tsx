@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import { fetchObservations } from '../../services/APIService/observations';
+import { fetchObservations, deleteByUUID } from '../../services/APIService/observations';
+import { fetchBodyById } from '../../services/APIService/bodies';
 import { formatDate, formatTime } from '../../utilities/format';
 
 function Index() {
@@ -23,7 +24,33 @@ function Index() {
             setIsLoading(false);
         });
     }, []);
+
+    const handleDelete = async (uuid) => {
+        let token = localStorage.getItem('token');
+        try {
+            await deleteByUUID(token, uuid);
+            fetchObservations(token)
+            .then(response => {
+                setObservations(response);
+            })
+            .catch(error => {
+                console.error('Error fetching observations after deletion:', error);
+            });
+        } catch (error) {
+            console.error('Error deleting observation:', error);
+        }
+    };
     
+    const fetchBodyDetails = async (id) => {
+        try {
+            const bodyDetails = await fetchBodyById(id);
+            console.log('Body details:', bodyDetails);
+            return bodyDetails.name;
+        } catch (error) {
+            console.error('Error fetching body details:', error);
+            return '';
+        }
+    };
 
     return (
         <div className="py-12">
@@ -43,8 +70,8 @@ function Index() {
                                 {observation.description}
                             </p>
                             <span className="block mt-4 text-sm opacity-70">{formatDate(observation.date)} {formatTime(observation.time)}</span>
-                            <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600"><i className="fa-solid fa-pen mr-2"></i>Edit</button>
-                            <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"><i className="fa-solid fa-trash mr-2"></i>Delete</button>
+                            <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600" onClick={() => handleDelete(observation.uuid)}><i className="fa-solid fa-trash mr-2"></i>Delete</button>
+                            <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => fetchBodyDetails(observation.celestial_body_id)}>Fetch Body Details</button>
                         </div>
                     ))
                 )}
