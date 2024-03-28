@@ -12,7 +12,7 @@ function Index() {
             if (response && response.message === "No bodies found!") {
                 setBodies([]);
             } else {
-                const sortedBodies = response.sort((a, b) => a.name.localeCompare(b.name));
+                const sortedBodies = response.sort((a, b) => a.englishName.localeCompare(b.englishName));
                 setBodies(sortedBodies);
             }
             setIsLoading(false);
@@ -76,7 +76,7 @@ function Index() {
                                 .filter(body => !selectedBodyType || body.bodyType.toLowerCase() === selectedBodyType.toLowerCase())
                                 .map((body) => (
                                     <div key={body.id} className={`${getBodyTypeClassName(body.bodyType)} p-4 text-center`}>
-                                        <h2 className="font-bold text-xl">{body.name}</h2>
+                                        <h2 className="font-bold text-xl">{body.englishName}</h2>
                                         <h2>{body.bodyType}</h2>
                                     </div>
                             ))}
