@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { fetchObservations } from '../../services/APIService/observations';
 import { formatDate, formatTime } from '../../utilities/format';
-import { deleteByUUID } from '../../services/APIService/observations';
 
 function Index() {
     const [observations, setObservations] = useState([]);
