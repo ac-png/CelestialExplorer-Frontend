@@ -25,8 +25,6 @@ function Show() {
         });
     }, [id]);
 
-    console.log(body);
-
     if (isLoading) {
         return <div>Loading...</div>;
     }
