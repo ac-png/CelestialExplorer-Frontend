@@ -5,58 +5,7 @@ body {
     font-size: var(--font-size);
 }
 
-button {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
-    border-radius: var(--border-radius);
-    border: none;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-}
-
-.button {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
-    border-radius: var(--border-radius);
-    border: none;
-    padding: 15px;
-    text-align: center;
-    display: inline-block;
-}
-
-.delete-button {
-    background-color: var(--danger-color);
-    color: var(--text-color);
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.App {
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.alert {
-    padding: 15px;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.alert-danger {
-    background-color: var(--danger-color);
-}
-
-.alert-danger a {
-    background-color: var(--text-color);
-    color: var(--danger-color);
-    padding: 5px;
-    border-radius: var(--border-radius);
+.card {
+    background-color: var(--card-background-color);
+    color: var(--card-text-color);
 }
