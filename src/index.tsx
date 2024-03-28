@@ -4,6 +4,7 @@ import './index.css';
 import './styles/dist/style.css';
 import { AuthProvider } from './services/AuthService';
 import App from './App';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
