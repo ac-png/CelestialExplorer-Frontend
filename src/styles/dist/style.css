@@ -4,6 +4,7 @@
   --text-color: #D2D1D7;
   --card-background-color: #8B7BDA;
   --card-text-color: #191923;
+  --button-background-color: #4f46e5;
   --primary-font: "Exo 2", sans-serif;
   --font-size: 16px;
   --border-radius: 5px;
@@ -24,4 +25,33 @@ body {
 nav {
   background-color: var(--card-background-color);
   color: var(--card-text-color);
+}
+
+form input[type=text] {
+  background-color: var(--text-color);
+}
+
+form input[type=number] {
+  background-color: var(--text-color);
+}
+
+form input[type=date] {
+  background-color: var(--text-color);
+}
+
+form input[type=time] {
+  background-color: var(--text-color);
+}
+
+form select {
+  background-color: var(--text-color);
+}
+
+form textarea {
+  background-color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-background-color);
+  color: var(--text-color);
 }/*# sourceMappingURL=style.css.map */

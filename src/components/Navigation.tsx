@@ -20,7 +20,7 @@ function Navigation() {
                     <>
                         <Link className="mr-4 hover:text-white" to='/user'>Profile</Link>
                         <Link className="mr-4 hover:text-white" to='/dashboard/observations'>Dashboard</Link>
-                        <button onClick={logout}>Logout</button>
+                        <button className='justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' onClick={logout}>Logout</button>
                     </>
                 ) : (
                     <>
