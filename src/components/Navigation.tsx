@@ -13,7 +13,8 @@ function Navigation() {
     return (
         <nav className="p-6 flex justify-between items-center">
             <div>
-                <span className="font-semibold text-xl tracking-tight">CelestialExplorer</span>
+                <Link className="font-semibold text-xl tracking-tight" to='/'>CelestialExplorer</Link>
+                <Link className="ml-4 hover:text-white" to='/'>Home</Link>
                 <Link className="ml-4 hover:text-white" to='/celestial-bodies'>CelestialBodies</Link>
             </div>
             <div className="text-sm">

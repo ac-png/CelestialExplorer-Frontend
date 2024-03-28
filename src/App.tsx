@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { useAuth } from './services/AuthService';
 
 import Navigation from "./components/Navigation";
+
+import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import UserInfo from "./pages/UserInfo";
@@ -36,7 +38,8 @@ function App() {
       <Router>
         <Navigation />
         <Routes>
-        <Route path='/signup' element={<Signup />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           <Route path='/celestial-bodies' element={<BodyIndex />} />
           {protectedRoutes}
