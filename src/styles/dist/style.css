@@ -4,7 +4,6 @@
   --text-color: #D2D1D7;
   --card-background-color: #8B7BDA;
   --card-text-color: #191923;
-  --danger-color: #721c24;
   --primary-font: "Exo 2", sans-serif;
   --font-size: 16px;
   --border-radius: 5px;
@@ -18,6 +17,11 @@ body {
 }
 
 .card {
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+}
+
+nav {
   background-color: var(--card-background-color);
   color: var(--card-text-color);
 }/*# sourceMappingURL=style.css.map */

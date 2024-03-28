@@ -7,6 +7,7 @@ import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
 import UserInfo from "./pages/UserInfo";
 import Index from "./pages/observations/Index";
+import Create from "./pages/observations/Create";
 
 function App() {
   const { authenticated, onAuthenticated } = useAuth();
@@ -24,6 +25,7 @@ function App() {
       <>
         <Route path='/user' element={<UserInfo />} />
         <Route path='/dashboard/observations' element={<Index />} />
+        <Route path='/dashboard/observations/create' element={<Create />} />
       </>
     );
   }
