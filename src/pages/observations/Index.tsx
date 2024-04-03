@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { fetchObservations, deleteByUUID } from '../../services/APIService/observations';
 import { fetchBodyById } from "../../services/APIService/bodies";
 import { formatDate, formatTime } from '../../utilities/format';
+import { Rating } from '../../../node_modules/@smastrom/react-rating/dist/index';
 
 function Index() {
     const [observations, setObservations] = useState([]);
@@ -71,14 +72,16 @@ function Index() {
                     <p>No Observations Found</p>
                 ) : (
                     observations.map((observation) => (
-                        <div className="card my-6 p-6">
+                        <div className="card my-6 p-6" key={observation.id}>
                             <h2 className="font-bold text-2xl">
                                 {observation.bodyName}
                             </h2>
                             <p className="mt-2">
                                 {observation.description}
                             </p>
-                            <span className="block mt-4 text-sm opacity-70">{formatDate(observation.date)} {formatTime(observation.time)}</span>
+                            <Rating className="mt-2 opacity-70" style={{ maxWidth: 250 }} value={observation.rating} readOnly />
+                            <span className="block mt-2 text-sm opacity-70">{formatDate(observation.date)} {formatTime(observation.time)}</span>
+                            <Link to={`/dashboard/observations/edit/${observation.uuid}`} className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600"><i className="fa-solid fa-pencil mr-3"></i>Edit</Link>
                             <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600" onClick={() => handleDelete(observation.uuid)}><i className="fa-solid fa-trash mr-2"></i>Delete</button>
                         </div>
                     ))
