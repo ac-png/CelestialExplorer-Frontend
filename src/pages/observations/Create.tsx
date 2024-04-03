@@ -4,6 +4,7 @@ import { CreateObservation } from '../../services/APIService/observations';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../services/AuthService';
 import { fetchBodies } from "../../services/APIService/bodies";
+import { Rating } from '../../../node_modules/@smastrom/react-rating/dist/index';
 
 function Create() {
     const { onAuthenticated } = useAuth();
@@ -118,19 +119,10 @@ function Create() {
                             Rating
                         </label>
                         <div className="mt-2">
-                            <input
-                                id="rating"
-                                name="rating"
-                                type="number"
-                                autoComplete="rating"
-                                value={form.rating}
-                                placeholder='0-5'
-                                onChange={handleChange}
-                                required
-                                className="block w-full rounded-md border-0 py-1.5 shadow-sm placeholder:text-gray-400 ring-1 ring-inset ring-gray-300 focus:ring-2 text-black focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                min={0}
-                                max={5}
-                            />
+                        {/* <Rating
+                            className="mt-2 opacity-70"
+                            style={{ maxWidth: 250 }}
+                        /> */}
                         </div>
                     </div>
                     <div>
