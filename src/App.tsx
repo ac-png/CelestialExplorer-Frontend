@@ -10,6 +10,7 @@ import Signup from "./pages/auth/Signup";
 import UserInfo from "./pages/UserInfo";
 import Index from "./pages/observations/Index";
 import Create from "./pages/observations/Create";
+import Edit from "./pages/observations/Edit";
 import BodyIndex from "./pages/celestialBodies/Index";
 import BodyShow from "./pages/celestialBodies/Show";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path='/user' element={<UserInfo />} />
         <Route path='/dashboard/observations' element={<Index />} />
         <Route path='/dashboard/observations/create' element={<Create />} />
+        <Route path='/dashboard/observations/edit/:uuid' element={<Edit />} />
       </>
     );
   }
