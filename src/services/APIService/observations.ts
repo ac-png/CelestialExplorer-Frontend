@@ -41,7 +41,7 @@ export const fetchObservationByBody = async (token, celestial_body_id) => {
     }
 };
 
-export const CreateObservation = async (token, sky_conditions, celestial_body_id, rating, description, date, time) => {
+export const CreateObservation = async (token, sky_conditions, celestial_body_id, rating, description, date, time, latitude, longitude) => {
     try {
         const response = await axios.post(`${API_URL}/dashboard/observations`, {
             sky_conditions,
@@ -49,7 +49,9 @@ export const CreateObservation = async (token, sky_conditions, celestial_body_id
             rating,
             description,
             date,
-            time
+            time,
+            latitude,
+            longitude
         }, {
             headers: {
                 'Authorization': `Bearer ${token}`

@@ -4,7 +4,6 @@ import { CreateObservation } from '../../services/APIService/observations';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../services/AuthService';
 import { fetchBodies } from "../../services/APIService/bodies";
-import { Rating } from '../../../node_modules/@smastrom/react-rating/dist/index';
 
 function Create() {
     const { onAuthenticated } = useAuth();
@@ -19,7 +18,9 @@ function Create() {
         rating: '',
         description: '',
         date: getTodayDate(),
-        time: getCurrentTime()
+        time: getCurrentTime(),
+        latitude: '',
+        longitude: ''
     });
 
     useEffect(() => {
@@ -51,7 +52,9 @@ function Create() {
                 form.rating,
                 form.description,
                 form.date,
-                form.time
+                form.time,
+                form.latitude,
+                form.longitude
             );
             navigate('/dashboard/observations');
             setForm({
@@ -60,7 +63,9 @@ function Create() {
                 rating: '',
                 description: '',
                 date: getTodayDate(),
-                time: getCurrentTime()
+                time: getCurrentTime(),
+                latitude: '',
+                longitude: ''
             });
         } catch (error) {
             console.error('Error creating observation:', error);
@@ -119,10 +124,19 @@ function Create() {
                             Rating
                         </label>
                         <div className="mt-2">
-                        {/* <Rating
-                            className="mt-2 opacity-70"
-                            style={{ maxWidth: 250 }}
-                        /> */}
+                            <input
+                                id="rating"
+                                name="rating"
+                                type="number"
+                                autoComplete="rating"
+                                value={form.rating}
+                                onChange={handleChange}
+                                placeholder='e.g., 0-5'
+                                min={0}
+                                max={5}
+                                required
+                                className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                            />
                         </div>
                     </div>
                     <div>
@@ -174,6 +188,44 @@ function Create() {
                                 required
                                 className="placeholder:text-gray-400 block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 text-black focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                             />
+                        </div>
+                    </div>
+                    <div className="flex space-x-4">
+                        <div className="w-1/2">
+                            <label htmlFor="latitude" className="block text-sm font-medium leading-6">
+                                Latitude
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="latitude"
+                                    name="latitude"
+                                    type="text"
+                                    autoComplete="latitude"
+                                    value={form.latitude}
+                                    onChange={handleChange}
+                                    placeholder='Enter latitude (e.g., 34.0522)'
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
+                        </div>
+                        <div className="w-1/2">
+                            <label htmlFor="longitude" className="block text-sm font-medium leading-6">
+                                Longitude
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="longitude"
+                                    name="longitude"
+                                    type="text"
+                                    autoComplete="longitude"
+                                    value={form.longitude}
+                                    onChange={handleChange}
+                                    placeholder='Enter longitude (e.g., -118.2437)'
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div>
