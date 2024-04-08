@@ -153,6 +153,42 @@ function Edit() {
                     </div>
                     </div>
                     </div>
+                    <div className="flex space-x-4">
+                        <div className="w-1/2">
+                            <label htmlFor="latitude" className="block text-sm font-medium leading-6">
+                                Latitude
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="latitude"
+                                    name="latitude"
+                                    type="text"
+                                    autoComplete="latitude"
+                                    defaultValue={observation.latitude}
+                                    placeholder='Enter latitude (e.g., 34.0522)'
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
+                        </div>
+                        <div className="w-1/2">
+                            <label htmlFor="longitude" className="block text-sm font-medium leading-6">
+                                Longitude
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="longitude"
+                                    name="longitude"
+                                    type="text"
+                                    autoComplete="longitude"
+                                    defaultValue={observation.longitude}
+                                    placeholder='Enter longitude (e.g., -118.2437)'
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
+                        </div>
+                    </div>
                     <div>
                         <button
                             type="submit"
