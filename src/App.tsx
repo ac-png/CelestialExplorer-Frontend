@@ -13,7 +13,7 @@ import Create from "./pages/observations/Create";
 import Edit from "./pages/observations/Edit";
 import BodyIndex from "./pages/celestialBodies/Index";
 import BodyShow from "./pages/celestialBodies/Show";
-
+import NotFound from "./pages/NotFound";
 function App() {
   const { authenticated, onAuthenticated } = useAuth();
 
@@ -47,6 +47,7 @@ function App() {
           <Route path='/celestial-bodies' element={<BodyIndex />} />
           <Route path='/celestial-bodies/:id' element={<BodyShow />} />
           {protectedRoutes}
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Router>
     </div>
