@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchBodies } from '../../services/APIService/bodies';
 import { Link } from 'react-router-dom';
 
@@ -91,7 +91,7 @@ function Index() {
                         <div className="grid grid-cols-3 gap-4 mt-3">
                             {bodies.filter(body => 
                                 (!selectedBodyType || body.bodyType.toLowerCase() === selectedBodyType.toLowerCase()) &&
-                                (body.englishName.toLowerCase().includes(searchTerm.toLowerCase()))
+                                (body.englishName.toLowerCase().startsWith(searchTerm.toLowerCase()))
                             ).map((body) => (
                                 <Link to={`/celestial-bodies/${body.id}`} key={body.id}>
                                     <div key={body.id} className={`${getBodyTypeClassName(body.bodyType)} p-4 text-center`}>
