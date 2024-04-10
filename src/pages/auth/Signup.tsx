@@ -24,7 +24,7 @@ function Signup() {
         try {
             const data = await registerUser(form.name, form.email, form.password);
             onAuthenticated(true, data.token);
-            navigate('/user');
+            navigate('/dashboard/observations');
         } catch (error) {
             console.error(error);
             setErrorMessage(error);

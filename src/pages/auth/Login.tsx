@@ -23,7 +23,7 @@ function Login() {
         try {
             const data = await loginUser(form.email, form.password);
             onAuthenticated(true, data.token);
-            navigate('/user');
+            navigate('/dashboard/observations');
         } catch (error) {
             console.error(error);
             setErrorMessage(error);
