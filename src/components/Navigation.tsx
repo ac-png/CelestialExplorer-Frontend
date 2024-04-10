@@ -8,7 +8,7 @@ function Navigation() {
 
     const logout = () => {
         onAuthenticated(false);
-        navigate('/login');
+        navigate('/');
     }
     
     const showNavigation = !['/', '/login', '/signup'].includes(location.pathname);
@@ -23,10 +23,8 @@ function Navigation() {
                         <Link className="ml-4 hover:text-white" to='/dashboard/observations'>Observations</Link>
                     </div>
                     <div className="text-sm">
-                            <>
-                                <Link className="mr-4 hover:text-white" to='/user'>Profile</Link>
-                                <button className='rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' onClick={logout}>Logout</button>
-                            </>
+                        <Link className="mr-4 hover:text-white" to='/user'>Profile</Link>
+                        <button className='rounded-md px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600' onClick={logout}>Logout</button>
                     </div>
                 </nav>
             )}
