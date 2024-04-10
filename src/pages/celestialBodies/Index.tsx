@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchBodies } from '../../services/APIService/bodies';
 import { Link } from 'react-router-dom';
 
@@ -72,7 +72,7 @@ function Index() {
                                 <li className="font-bold text-center p-3 asteroid" onClick={() => handleBodyTypeClick('asteroid')}>Asteroid</li>
                             </ul>
                             <p>
-                                <strong>Search for Celestial Body:</strong>
+                                <strong><i className="mr-2 fa-solid fa-magnifying-glass"></i>Search for Celestial Body:</strong>
                                 <input
                                     type="text"
                                     placeholder="Search..."
