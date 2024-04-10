@@ -64,7 +64,7 @@ function Index() {
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="mb-8 flex justify-between items-center">
                     <h1 className="text-3xl font-bold">Observations Dashboard</h1>
-                    <Link to='/dashboard/observations/create' className="mb-4 px-4 py-2 border border-green-200 text-green-700 rounded-md btn-link btn-lg mb-2">New Observation</Link>
+                    <Link to='/dashboard/observations/create' className="mb-4 px-4 py-2 border border-green-600 text-green-600 rounded-md btn-link btn-lg mb-2 hover:bg-green-600 hover:text-gray-800"><i className="mr-2 fa-solid fa-plus"></i>New Observation</Link>
                 </div>
                 {isLoading ? (
                     <p>Loading...</p>
@@ -77,12 +77,17 @@ function Index() {
                                 {observation.bodyName}
                             </h2>
                             <p className="mt-2">
-                                {observation.description}
+                                <strong>Description: </strong>{observation.description}
                             </p>
-                            <Rating className="mt-2 opacity-70" style={{ maxWidth: 250 }} value={observation.rating} readOnly />
-                            <span className="block mt-2 text-sm opacity-70">{formatDate(observation.date)} {formatTime(observation.time)}</span>
-                            <Link to={`/dashboard/observations/edit/${observation.uuid}`} className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600"><i className="fa-solid fa-pencil mr-3"></i>Edit</Link>
-                            <button className="mt-4 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mr-3 focus-visible:outline-indigo-600" onClick={() => handleDelete(observation.uuid)}><i className="fa-solid fa-trash mr-2"></i>Delete</button>
+                            <p className="mt-2">
+                                <strong>Location: </strong>{observation.latitude}, {observation.longitude}
+                            </p>
+                            <p className="block mt-2"><strong>Date and Time: </strong>{formatDate(observation.date)} {formatTime(observation.time)}</p>
+                            <p className="flex items-center mb-3">
+                                <strong>Rating: </strong><Rating className="block mt-2 opacity-100" style={{ maxWidth: 250 }} value={observation.rating} readOnly />
+                            </p>
+                            <Link to={`/dashboard/observations/edit/${observation.uuid}`} className="px-4 border border-yellow-600 text-yellow-600 mr-3 py-2.5 rounded-md btn-link btn-lg mb-2 hover:bg-yellow-600 hover:text-gray-800"><i className="fa-solid fa-pencil mr-3"></i>Edit</Link>
+                            <button className="px-4 py-2 border border-red-600 text-red-600 mr-3 bg-gray-800 rounded-md btn-link btn-lg mb-2 hover:bg-red-600 hover:text-gray-800" onClick={() => handleDelete(observation.uuid)}><i className="fa-solid fa-trash mr-2"></i>Delete</button>
                         </div>
                     ))
                 )}
