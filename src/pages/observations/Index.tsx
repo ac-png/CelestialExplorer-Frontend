@@ -72,7 +72,7 @@ function Index() {
                     <p>No Observations Found</p>
                 ) : (
                     observations.map((observation) => (
-                        <div className="card my-6 p-6" key={observation.id}>
+                        <div className="bg-gray-800 my-6 shadow-md rounded-md p-6" key={observation.id}>
                             <h2 className="font-bold text-2xl">
                                 {observation.bodyName}
                             </h2>

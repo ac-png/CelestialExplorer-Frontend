@@ -17,11 +17,6 @@ body {
   font-size: var(--font-size);
 }
 
-.card {
-  background-color: var(--card-background-color);
-  color: var(--card-text-color);
-}
-
 nav {
   background-color: var(--card-background-color);
   color: var(--card-text-color);
