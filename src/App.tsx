@@ -14,13 +14,14 @@ import Edit from "./pages/observations/Edit";
 import BodyIndex from "./pages/celestialBodies/Index";
 import BodyShow from "./pages/celestialBodies/Show";
 import NotFound from "./pages/NotFound";
+
 function App() {
   const { authenticated, onAuthenticated } = useAuth();
-
+  
   let protectedRoutes;
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+    if (localStorage.getItem('token')) {
       onAuthenticated(true);
     }
   });
@@ -28,10 +29,10 @@ function App() {
   if(authenticated){
     protectedRoutes = (
       <>
-        <Route path='/user' element={<UserInfo />} />
-        <Route path='/dashboard/observations' element={<Index />} />
-        <Route path='/dashboard/observations/create' element={<Create />} />
-        <Route path='/dashboard/observations/edit/:uuid' element={<Edit />} />
+        <Route key='/user' path='/user' element={<UserInfo />} />
+        <Route key='/dashboard/observations' path='/dashboard/observations' element={<Index />} />
+        <Route key='/dashboard/observations/create' path='/dashboard/observations/create' element={<Create />} />
+        <Route key='/dashboard/observations/edit/:uuid' path='/dashboard/observations/edit/:uuid' element={<Edit />} />
       </>
     );
   }
