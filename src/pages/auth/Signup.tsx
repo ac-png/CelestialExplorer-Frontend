@@ -1,6 +1,6 @@
 import { registerUser } from '../../services/APIService/auth';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../services/AuthService';
 
 function Signup() {
@@ -114,6 +114,7 @@ function Signup() {
                         >
                             Sign up
                         </button>
+                        <p className='mt-3'>Already have an account? Login <Link to='/login' className='text-indigo-600'>here</Link></p>
                     </div>
                 </form>
             </div>
