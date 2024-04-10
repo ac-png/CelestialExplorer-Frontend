@@ -73,13 +73,13 @@ function Create() {
     };
 
     return (
-        <div className="flex min-h-full flex-1 flex-col justify-center px-4">
-            <div>
-                <h2 className="mt-10 text-2xl font-bold leading-9 tracking-tight">
-                    Create new observation
+        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
+                    Create Observation
                 </h2>
             </div>
-            <div className="mt-10">
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="celestial_body_id" className="block text-sm font-medium leading-6">
@@ -91,7 +91,7 @@ function Create() {
                                 name="celestial_body_id"
                                 value={form.celestial_body_id}
                                 onChange={handleChange}
-                                className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="block rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 required
                             >
                                 <option value="">Select a Celestial Body</option>
@@ -139,38 +139,40 @@ function Create() {
                             />
                         </div>
                     </div>
-                    <div>
-                        <label htmlFor="date" className="block text-sm font-medium leading-6">
-                            Date
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                id="date"
-                                name="date"
-                                type="date"
-                                autoComplete="date"
-                                value={form.date}
-                                onChange={handleChange}
-                                required
-                                className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 text-black focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
+                    <div className="flex space-x-4">
+                        <div className="w-1/2">
+                            <label htmlFor="date" className="block text-sm font-medium leading-6">
+                                Date
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="date"
+                                    name="date"
+                                    type="date"
+                                    autoComplete="date"
+                                    value={form.date}
+                                    onChange={handleChange}
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <label htmlFor="time" className="block text-sm font-medium leading-6">
-                            Time
-                        </label>
-                        <div className="mt-2">
-                            <input
-                                id="time"
-                                name="time"
-                                type="time"
-                                autoComplete="time"
-                                value={form.time}
-                                onChange={handleChange}
-                                required
-                                className="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 text-black  focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            />
+                        <div className="w-1/2">
+                            <label htmlFor="time" className="block text-sm font-medium leading-6">
+                                Time
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="time"
+                                    name="time"
+                                    type="time"
+                                    autoComplete="time"
+                                    value={form.time}
+                                    onChange={handleChange}
+                                    required
+                                    className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -231,7 +233,7 @@ function Create() {
                     <div>
                         <button
                             type="submit"
-                            className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                            className="flex w-full justify-center rounded-md px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mb-3"
                         >
                             Create
                         </button>
