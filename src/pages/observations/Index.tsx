@@ -52,17 +52,17 @@ function Index() {
         let token = localStorage.getItem('token');
         try {
             await deleteByUUID(token, uuid);
-            fetchObservations(token)
-                .then(response => {
-                    setObservations(response);
-                })
-                .catch(error => {
-                    console.error('Error fetching observations after deletion:', error);
-                });
+            const updatedObservations = observations.filter(obs => obs.uuid !== uuid);
+            setObservations(updatedObservations);
+    
+            if (updatedObservations.length === 0) {
+                setIsLoading(false);
+            }
         } catch (error) {
             console.error('Error deleting observation:', error);
         }
     };
+    
     
 
     return (
