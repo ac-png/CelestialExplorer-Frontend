@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useAuth } from './services/AuthService';
 
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
@@ -50,6 +51,7 @@ function App() {
           {protectedRoutes}
           <Route path='*' element={<NotFound />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
