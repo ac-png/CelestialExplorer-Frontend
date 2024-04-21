@@ -44,20 +44,26 @@ function Index() {
     }, []);  
 
     const handleDelete = async (uuid) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this observation?");
+        if (!confirmDelete) {
+            return;
+        }
+    
         let token = localStorage.getItem('token');
         try {
             await deleteByUUID(token, uuid);
             fetchObservations(token)
-            .then(response => {
-                setObservations(response);
-            })
-            .catch(error => {
-                console.error('Error fetching observations after deletion:', error);
-            });
+                .then(response => {
+                    setObservations(response);
+                })
+                .catch(error => {
+                    console.error('Error fetching observations after deletion:', error);
+                });
         } catch (error) {
             console.error('Error deleting observation:', error);
         }
     };
+    
 
     return (
         <div className="py-12">
@@ -69,7 +75,9 @@ function Index() {
                 {isLoading ? (
                     <p>Loading...</p>
                 ) : observations.length === 0 ? (
-                    <p>No Observations Found</p>
+                    <p className="bg-gray-800 shadow-md rounded-md p-6 mt-5">
+                        <p className="text-red-600 text-2xl font-bold">No Observations Found!</p>
+                    </p>
                 ) : (
                     observations.map((observation) => (
                         <div className="bg-gray-800 my-6 shadow-md rounded-md p-6" key={observation.id}>
