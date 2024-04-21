@@ -62,16 +62,43 @@ function Show() {
         return <div>No bodies found!</div>;
     }
 
+    let imageUrl;
+    switch (body.bodyType.toLowerCase()) {
+        case 'dwarf planet':
+            imageUrl = 'https://images.unsplash.com/photo-1614314107768-6018061b5b72?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHdhcmYlMjBwbGFuZXR8ZW58MHx8MHx8fDA%3D';
+            break;
+        case 'planet':
+            imageUrl = 'https://images.unsplash.com/photo-1564053489984-317bbd824340?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGxhbmV0fGVufDB8fDB8fHww';
+            break;
+        case 'star':
+            imageUrl = 'https://plus.unsplash.com/premium_photo-1670210080045-a2e0da63dd99?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RhcnxlbnwwfHwwfHx8MA%3D%3D';
+            break;
+        case 'moon':
+            imageUrl = 'https://images.unsplash.com/photo-1479090793912-eb9929f4fdb2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9vbnxlbnwwfHwwfHx8MA%3D%3D';
+            break;
+        case 'comet':
+            imageUrl = 'https://images.unsplash.com/photo-1623284577359-a0130bb9a86d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+            break;
+        case 'asteroid':
+            imageUrl = 'https://plus.unsplash.com/premium_photo-1679526019817-015be70a78bc?q=80&w=2220&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+            break;
+        default:
+            imageUrl = 'https://example.com/default-image.jpg';
+    }
+
     return (
         <div className="py-12">
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
-                    <h1 className="text-center text-5xl font-bold mb-5">{body.englishName}</h1>
-                    <img
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                        className="rounded-t-lg"
-                        alt="..."
-                    />
+                    <div className="py-12 flex justify-center items-center">
+                        <h1 className="text-center text-5xl font-bold mb-5">{body.englishName}</h1>
+                        <img
+                            src={imageUrl}
+                            className="ml-5 rounded-lg"
+                            alt=""
+                            width={300}
+                        />
+                    </div>
                     <div className="bg-gray-800 shadow-md rounded-md p-6">
                         <div className="grid grid-cols-2">
                             <div style={{ display: 'flex', justifyContent: 'center' }}>

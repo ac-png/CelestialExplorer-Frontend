@@ -23,7 +23,7 @@ function User () {
                         <h1 className="text-2xl font-semibold text-gray-800">User Information</h1>
                         <div className="mt-4">
                             <div className="flex items-center">
-                                <div className="w-12 h-12 rounded-full mr-4 bg-gray-300"></div>
+                                <img src="https://plus.unsplash.com/premium_photo-1683121366070-5ceb7e007a97?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" className='mr-4 rounded-full' width={100} height={100} />
                                 <div>
                                     <h2 className="text-lg font-semibold text-gray-800">{user.name}</h2>
                                     <p className="text-sm text-gray-600">{user.email}</p>
