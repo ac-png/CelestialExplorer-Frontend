@@ -4,6 +4,7 @@ import { CreateObservation } from '../../services/APIService/observations';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../services/AuthService';
 import { fetchBodies } from "../../services/APIService/bodies";
+import { Rating } from '@smastrom/react-rating';
 
 function Create() {
     const { onAuthenticated } = useAuth();
@@ -15,13 +16,17 @@ function Create() {
     const [form, setForm] = useState({
         sky_conditions: '',
         celestial_body_id: '',
-        rating: '',
+        rating: 0,
         description: '',
         date: getTodayDate(),
         time: getCurrentTime(),
         latitude: '',
         longitude: ''
     });
+
+    const handleRatingChange = (newValue) => {
+        setForm({ ...form, rating: newValue });
+    };
 
     useEffect(() => {
         fetchBodies()
@@ -60,7 +65,7 @@ function Create() {
             setForm({
                 sky_conditions: '',
                 celestial_body_id: '',
-                rating: '',
+                rating: 0,
                 description: '',
                 date: getTodayDate(),
                 time: getCurrentTime(),
@@ -124,7 +129,7 @@ function Create() {
                             Rating
                         </label>
                         <div className="mt-2">
-                            <input
+                            {/* <input
                                 id="rating"
                                 name="rating"
                                 type="number"
@@ -136,6 +141,12 @@ function Create() {
                                 max={5}
                                 required
                                 className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
+                            /> */}
+                            <Rating
+                                className="block mt-2 opacity-100"
+                                style={{ maxWidth: 250 }}
+                                value={form.rating}
+                                onChange={handleRatingChange}
                             />
                         </div>
                     </div>
