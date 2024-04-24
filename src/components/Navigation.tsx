@@ -17,8 +17,8 @@ function Navigation() {
         <>
             {showNavigation && (
                 <nav className="p-6 flex justify-between items-center">
-                    <div>
-                        <Link className="font-semibold text-xl tracking-tight" to='/'>CelestialExplorer</Link>
+                    <div className='flex items-center'>
+                        <Link className="font-semibold text-3xl tracking-tight" to='/'>CelestialExplorer</Link>
                         <Link className="ml-4 hover:text-white" to='/celestial-bodies'>CelestialBodies</Link>
                         <Link className="ml-4 hover:text-white" to='/dashboard/observations'>Observations</Link>
                     </div>
