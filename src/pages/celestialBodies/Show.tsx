@@ -166,7 +166,6 @@ function Show() {
                             </div>
                         ) : (
                             observations.map((observation) => (
-                                observations.map((observation) => (
                                     <div key={observation.id}>
                                         <p className="mt-2">
                                             <strong>Description: </strong>{observation.description}
@@ -181,8 +180,6 @@ function Show() {
                                         <Link to={`/dashboard/observations/edit/${observation.uuid}`} className="px-4 border border-yellow-600 text-yellow-600 mr-3 py-2.5 rounded-md btn-link btn-lg mb-2 hover:bg-yellow-600 hover:text-gray-800"><i className="fa-solid fa-pencil mr-3"></i>Edit</Link>
                                         <button className="px-4 py-2 border border-red-600 text-red-600 mr-3 bg-gray-800 rounded-md btn-link btn-lg mb-2 hover:bg-red-600 hover:text-gray-800" onClick={() => handleDelete(observation.uuid)}><i className="fa-solid fa-trash mr-2"></i>Delete</button>
                                     </div>
-                                ))
-                                
                             ))
                         )}
                     </div>
