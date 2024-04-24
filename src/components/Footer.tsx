@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div>
             {showFooter && (
-                <footer className="p-4 absolute bottom-0 w-full">
+                <footer className="p-4 mt-5 bottom-0 w-full">
                     <div className="container mx-auto">
                         <div className="flex flex-wrap justify-between items-center">
                             <div className="w-full md:w-auto mb-4 md:mb-0">
