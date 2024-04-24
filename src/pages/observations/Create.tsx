@@ -133,7 +133,7 @@ function Create() {
                         </label>
                         <div className="mt-2">
                             <Rating
-                                className="block mt-2 opacity-100"
+                                className="mt-2 opacity-70"
                                 style={{ maxWidth: 250 }}
                                 value={form.rating}
                                 onChange={handleRatingChange}
