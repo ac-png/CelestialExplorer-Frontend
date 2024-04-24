@@ -10,8 +10,7 @@ function Create() {
     const { onAuthenticated } = useAuth();
     const navigate = useNavigate();
     const [bodies, setBodies] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [form, setForm] = useState({
         sky_conditions: '',
@@ -30,14 +29,18 @@ function Create() {
 
     useEffect(() => {
         fetchBodies()
-        .then((bodies) => {
-            setBodies(bodies);
-            setLoading(false);
+        .then((response) => {
+            if (response && response.message === "No bodies found!") {
+                setBodies([]);
+            } else {
+                const sortedBodies = response.sort((a, b) => a.englishName.localeCompare(b.englishName));
+                setBodies(sortedBodies);
+            }
+            setIsLoading(false);
         })
         .catch((error) => {
             console.error('Error fetching bodies:', error);
-            setError(error);
-            setLoading(false);
+            setIsLoading(false);
         });
     }, []);
 
@@ -101,7 +104,7 @@ function Create() {
                             >
                                 <option value="">Select a Celestial Body</option>
                                 {bodies.map(body => (
-                                    <option key={body.id} value={body.id}>{body.name}</option>
+                                    <option key={body.id} value={body.id}>{body.englishName}</option>
                                 ))}
                             </select>
                         </div>
