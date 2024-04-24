@@ -63,13 +63,13 @@ function Index() {
                     <>
                         <div>
                             <ul className="mt-3 grid grid-cols-3 gap-4 mt-3">
-                                <li className="font-bold text-center p-3" onClick={() => handleBodyTypeClick(null)}>All</li>
-                                <li className="font-bold text-center p-3 dwarf-planet" onClick={() => handleBodyTypeClick('dwarf planet')}>Dwarf Planet</li>
-                                <li className="font-bold text-center p-3 planet" onClick={() => handleBodyTypeClick('planet')}>Planet</li>
-                                <li className="font-bold text-center p-3 star" onClick={() => handleBodyTypeClick('star')}>Star</li>
-                                <li className="font-bold text-center p-3 moon" onClick={() => handleBodyTypeClick('moon')}>Moon</li>
-                                <li className="font-bold text-center p-3 comet" onClick={() => handleBodyTypeClick('comet')}>Comet</li>
-                                <li className="font-bold text-center p-3 asteroid" onClick={() => handleBodyTypeClick('asteroid')}>Asteroid</li>
+                                <li className="font-bold text-center p-3 hover:opacity-70" onClick={() => handleBodyTypeClick(null)}>All</li>
+                                <li className="font-bold text-center p-3 dwarf-planet hover:opacity-70" onClick={() => handleBodyTypeClick('dwarf planet')}>Dwarf Planet</li>
+                                <li className="font-bold text-center p-3 planet hover:opacity-70" onClick={() => handleBodyTypeClick('planet')}>Planet</li>
+                                <li className="font-bold text-center p-3 star hover:opacity-70" onClick={() => handleBodyTypeClick('star')}>Star</li>
+                                <li className="font-bold text-center p-3 moon hover:opacity-70" onClick={() => handleBodyTypeClick('moon')}>Moon</li>
+                                <li className="font-bold text-center p-3 comet hover:opacity-70" onClick={() => handleBodyTypeClick('comet')}>Comet</li>
+                                <li className="font-bold text-center p-3 asteroid hover:opacity-70" onClick={() => handleBodyTypeClick('asteroid')}>Asteroid</li>
                             </ul>
                             <p>
                                 <strong><i className="mr-2 fa-solid fa-magnifying-glass"></i>Search for Celestial Body:</strong>
