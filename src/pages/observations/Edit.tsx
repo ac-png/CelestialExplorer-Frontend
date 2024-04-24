@@ -82,7 +82,7 @@ function Edit() {
                             >
                                 <option value="">Select a Celestial Body</option>
                                 {bodies.map(body => (
-                                    <option key={body.id} value={body.id}>{body.name}</option>
+                                    <option key={body.id} value={body.id}>{body.englishName}</option>
                                 ))}
                             </select>
                         </div>
