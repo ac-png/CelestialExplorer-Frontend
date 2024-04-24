@@ -68,7 +68,7 @@ function Edit() {
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form onSubmit={handleEditSubmit} className="space-y-6">
                     <div>
-                        <label htmlFor="celestial_observation_id" className="block text-sm font-medium leading-6">
+                        <label htmlFor="celestial_observation_id" className="block text-lg font-medium leading-6">
                             Celestial Body
                         </label>
                         <div className="mt-2">
@@ -88,7 +88,7 @@ function Edit() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="sky_conditions" className="block text-sm font-medium leading-6">
+                        <label htmlFor="sky_conditions" className="block text-lg font-medium leading-6">
                             Sky Conditions
                         </label>
                         <div className="mt-2">
@@ -107,7 +107,7 @@ function Edit() {
                     </div>
                     <div className="flex space-x-4 mt-3">
                         <div className="w-1/2">
-                            <label htmlFor="date" className="block text-sm font-medium leading-6">
+                            <label htmlFor="date" className="block text-lg font-medium leading-6">
                                 Date
                             </label>
                             <div className="mt-2">
@@ -124,7 +124,7 @@ function Edit() {
                             </div>
                         </div>
                         <div className="w-1/2">
-                            <label htmlFor="time" className="block text-sm font-medium leading-6">
+                            <label htmlFor="time" className="block text-lg font-medium leading-6">
                                 Time
                             </label>
                             <div className="mt-2">
@@ -142,7 +142,7 @@ function Edit() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="rating" className="block text-sm font-medium leading-6 mt-5">
+                        <label htmlFor="rating" className="block text-lg font-medium leading-6 mt-5">
                             Rating
                         </label>
                         <div className="mt-2">
@@ -155,7 +155,7 @@ function Edit() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="description" className="block text-sm font-medium leading-6 mt-5">
+                        <label htmlFor="description" className="block text-lg font-medium leading-6 mt-5">
                             Description
                         </label>
                         <div className="mt-2">
@@ -173,7 +173,7 @@ function Edit() {
                     </div>
                     <div className="flex space-x-4">
                         <div className="w-1/2">
-                            <label htmlFor="latitude" className="block text-sm font-medium leading-6">
+                            <label htmlFor="latitude" className="block text-lg font-medium leading-6">
                                 Latitude
                             </label>
                             <div className="mt-2">
@@ -191,7 +191,7 @@ function Edit() {
                             </div>
                         </div>
                         <div className="w-1/2">
-                            <label htmlFor="longitude" className="block text-sm font-medium leading-6">
+                            <label htmlFor="longitude" className="block text-lg font-medium leading-6">
                                 Longitude
                             </label>
                             <div className="mt-2">

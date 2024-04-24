@@ -90,7 +90,7 @@ function Create() {
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="celestial_body_id" className="block text-sm font-medium leading-6">
+                        <label htmlFor="celestial_body_id" className="block text-lg font-medium leading-6">
                             Celestial Body
                         </label>
                         <div className="mt-2">
@@ -110,7 +110,7 @@ function Create() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="sky_conditions" className="block text-sm font-medium leading-6">
+                        <label htmlFor="sky_conditions" className="block text-lg font-medium leading-6">
                             Sky Conditions
                         </label>
                         <div className="mt-2">
@@ -128,23 +128,10 @@ function Create() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="rating" className="block text-sm font-medium leading-6">
+                        <label htmlFor="rating" className="block text-lg font-medium leading-6">
                             Rating
                         </label>
                         <div className="mt-2">
-                            {/* <input
-                                id="rating"
-                                name="rating"
-                                type="number"
-                                autoComplete="rating"
-                                value={form.rating}
-                                onChange={handleChange}
-                                placeholder='e.g., 0-5'
-                                min={0}
-                                max={5}
-                                required
-                                className="block w-full rounded-md border-0 py-1.5 shadow-sm text-black ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400"
-                            /> */}
                             <Rating
                                 className="block mt-2 opacity-100"
                                 style={{ maxWidth: 250 }}
@@ -155,7 +142,7 @@ function Create() {
                     </div>
                     <div className="flex space-x-4">
                         <div className="w-1/2">
-                            <label htmlFor="date" className="block text-sm font-medium leading-6">
+                            <label htmlFor="date" className="block text-lg font-medium leading-6">
                                 Date
                             </label>
                             <div className="mt-2">
@@ -172,7 +159,7 @@ function Create() {
                             </div>
                         </div>
                         <div className="w-1/2">
-                            <label htmlFor="time" className="block text-sm font-medium leading-6">
+                            <label htmlFor="time" className="block text-lg font-medium leading-6">
                                 Time
                             </label>
                             <div className="mt-2">
@@ -190,7 +177,7 @@ function Create() {
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="description" className="block text-sm font-medium leading-6">
+                        <label htmlFor="description" className="block text-lg font-medium leading-6">
                             Description
                         </label>
                         <div className="mt-2">
@@ -208,7 +195,7 @@ function Create() {
                     </div>
                     <div className="flex space-x-4">
                         <div className="w-1/2">
-                            <label htmlFor="latitude" className="block text-sm font-medium leading-6">
+                            <label htmlFor="latitude" className="block text-lg font-medium leading-6">
                                 Latitude
                             </label>
                             <div className="mt-2">
@@ -226,7 +213,7 @@ function Create() {
                             </div>
                         </div>
                         <div className="w-1/2">
-                            <label htmlFor="longitude" className="block text-sm font-medium leading-6">
+                            <label htmlFor="longitude" className="block text-lg font-medium leading-6">
                                 Longitude
                             </label>
                             <div className="mt-2">
