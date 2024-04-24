@@ -141,11 +141,13 @@ function Show() {
                     <h1 className="text-2xl font-bold mt-5">Moons</h1>
                     {body.moons && body.moons.length > 0 ? (
                         <div className="bg-gray-800 shadow-md rounded-md p-6 mt-5 grid grid-cols-3 gap-4 mt-3">
-                            {body.moons.map((moon, index) => (
-                                <Link to={`/celestial-bodies/${moon.moon}`} key={index} className='p-4 text-center moon m-1'>
-                                    <h2 className="font-bold text-xl">{moon.moon}</h2>
-                                </Link>
-                            ))}
+                            {body.moons
+                                .sort((a, b) => a.moon.localeCompare(b.moon))
+                                .map((moon, index) => (
+                                    <Link to={`/celestial-bodies/${moon.moon}`} key={index} className='p-4 text-center moon m-1'>
+                                        <h2 className="font-bold text-xl">{moon.moon}</h2>
+                                    </Link>
+                                ))}
                         </div>
                     ) : (
                         <p className="bg-gray-800 shadow-md rounded-md p-6 mt-5">
