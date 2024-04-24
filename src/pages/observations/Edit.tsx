@@ -31,11 +31,18 @@ function Edit() {
 
     useEffect(() => {
         fetchBodies()
-        .then((bodies) => {
-            setBodies(bodies);
+        .then((response) => {
+            if (response && response.message === "No bodies found!") {
+                setBodies([]);
+            } else {
+                const sortedBodies = response.sort((a, b) => a.englishName.localeCompare(b.englishName));
+                setBodies(sortedBodies);
+            }
+            setIsLoading(false);
         })
         .catch((error) => {
             console.error('Error fetching bodies:', error);
+            setIsLoading(false);
         });
     }, []);
 
